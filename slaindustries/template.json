@@ -1,0 +1,167 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "base": {
+        "health": {
+          "value": 10,
+          "min": 0,
+          "max": 10
+        },
+		"movement": {
+			"closing": {
+				"value": 2
+			},
+			"rush": {
+				"value": 5
+			}
+		},
+		"abilities": {
+			"str": {
+				"value": 1
+			},
+			"dex": {
+				"value": 1
+			},
+			"know": {
+				"value": 1
+				
+			},
+			"conc": {
+				"value": 1
+			},
+			"cha": {
+				"value": 1
+			},
+			"cool": {
+				"value": 1
+			},
+			"luck": {
+				"value": 1,
+				"min": 0,
+				"max": 6
+			}			
+		},
+		"skills":{
+		  "climb":{"name": "Climbing","rank": 0},
+		  "melee":{"name": "Melee Weapons","rank": 0},
+		  "pole":{"name": "Polearms","rank": 0},
+		  "shield":{"name": "Shield Craft", "rank": 0},
+		  "support":{"name": "Support Weapons" , "rank": 0},
+		  "swim":{"name": "Swimming", "rank": 0},
+		  "throw":{"name": "Throwing", "rank": 0},
+		  "unarmed":{"name": "Unarmed", "rank": 0},
+		  "acro":{"name": "Acrobatics", "rank": 0},
+		  "ath":{"name": "Athletics", "rank": 0},
+		  "moto":{"name": "Motorcycle", "rank": 0},
+		  "forge":{"name": "Forgery", "rank": 0},
+		  "pistol":{"name": "Pistol", "rank": 0},
+		  "rifle":{"name": "Rifle", "rank": 0},
+		  "sleight":{"name": "Sleight of Hand", "rank": 0},
+		  "stealth":{"name": "Stealth", "rank": 0},
+		  "admin": {"name": "Administration & Finance", "rank": 0},
+		  "comp": {"name": "Computers", "rank": 0},
+		  "edu": {"name": "Education", "rank": 0},
+		  "forensics": {"name": "Forensics" , "rank": 0},
+		  "lang": {"name": "Language", "rank": 0},
+		  "lore": {"name": "Lore", "rank": 0},
+		  "med": {"name": "Medecine", "rank": 0},
+		  "street": {"name": "Streetwise" , "rank": 0},
+		  "demo": {"name": "Demolitions", "rank": 0},
+		  "drive": {"name": "Drive", "rank": 0},
+		  "detect": {"name": "Detection", "rank": 0},
+		  "pick": {"name": "Pick Locks", "rank": 0},
+		  "lips":{"name": "Read Lips", "rank": 0},
+		  "tac": {"name": "Tactics", "rank": 0},
+		  "tech": {"name": "Technical", "rank": 0},
+		  "track": {"name": "Tracking", "rank": 0},
+		  "dip": {"name": "Diplomacy", "rank": 0},
+		  "haggle": {"name": "Haggle", "rank": 0},
+		  "lead": {"name": "Leadership", "rank": 0},
+		  "oratory": {"name": "Oratory", "rank": 0},
+		  "per": {"name": "Persuasion", "rank": 0},
+		  "sed": {"name": "Seduction", "rank": 0},
+		  "bribe": {"name": "Bribe", "rank": 0},
+		  "gamble": {"name": "Gambling", "rank": 0},
+		  "intero": {"name": "Interrogation", "rank": 0},
+		  "intimid": {"name": "Intimidate", "rank": 0},
+		  "surv": {"name": "Survival", "rank": 0},
+		  "tort": {"name": "Torture", "rank": 0}	
+		},
+		"biography": ""
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "attributes": {
+        "scl": {
+          "value": 10
+        },
+		"ratings":{
+			"body": {"name": "Body", "value": 0},
+			"brains": {"name": "Brains", "value": 0},
+			"bravado": {"name": "Bravado", "value": 0}
+		},
+		"species": {"value": ""},
+		"package": {"value":""},
+		"squad": {"value":""}
+      }
+    },
+    "npc": {
+      "templates": ["base"]
+    }
+  },
+  "Item": {
+    "types": ["item", "trait", "formulae", "armor", "ranged", "melee"],
+    "templates": {
+      "base": {
+        "description": ""
+      },
+	  "weapon": {
+		"quantity": 1,
+		"weight": 0,
+		"cost": 0,
+		"skill": "",
+		"dmg": "",
+		"min_dmg": 0,
+		"ad": 0,
+		"skill": ""
+		}
+    },
+    "item": {
+      "templates": ["base"],
+      "quantity": 1,
+	  "weight": 0,
+	  "cost": 0,
+	  "formula": ""
+    },
+	"melee":{
+		"templates":["weapon"]
+	},
+	"ranged":{
+		"templates": ["weapon"],
+		"rof": 0,
+		"recoil": 0,
+		"range": "10m",
+		"clip": 0
+	},
+	"armor":{
+		"templates":["base"],
+		"weight": 0,
+		"cost": 0,
+		"pv": 0,
+		"resist": 0
+	},
+    "trait": {
+      "templates": ["base"],
+	  "effect": ""
+    },
+    "formulae": {
+      "templates": ["base"],
+      "rank": 0,
+	  "domain": "",
+	  "fr": 0,
+	  "duration": ""
+    }
+  }
+}

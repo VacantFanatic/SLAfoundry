@@ -1,0 +1,34 @@
+{
+  "id": "slaindustries",
+  "title": "SLA Industries",
+  "description": "Dev for SLA",
+  "version": "0.1",
+  "compatibility": {
+    "minimum": 10,
+    "verified": "10.287",
+    "maximum": 10
+  },
+  "authors": [{
+    "name": "Asacolips"
+  }],
+  "esmodules": ["module/slaindustries.mjs"],
+  "styles": ["css/slaindustries.css"],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 2,
+  "gridUnits": "m",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": null,
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt",
+  "changelog": "CHANGELOG.md"
+}

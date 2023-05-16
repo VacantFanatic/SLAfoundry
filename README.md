@@ -9,4 +9,4 @@ TODO:
 - Implement ammo as item
 - Set "clip" on ranged weapons as ammo max vs. current # of rounds
 - Implement reverse initiative order
-- Have skills display on NPC sheets
+- Update NPC sheets - Items, Skills, attributes

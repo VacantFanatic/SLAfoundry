@@ -102,6 +102,18 @@
 			"brains": {"name": "Brains", "value": 0},
 			"bravado": {"name": "Bravado", "value": 0}
 		},
+		"disciplines":{
+			"aware": {"name": "Awareness", "rank": 0},
+			"blast": {"name": "Blast", "rank": 0},
+			"comm": {"name": "Communication", "rank": 0},
+			"enh": {"name": "Enhance", "rank": 0},
+			"heal": {"name": "Heal", "rank": 0},
+			"prot": {"name": "Protection", "rank": 0},
+			"fold": {"name": "Reality Fold", "rank": 0},
+			"sense": {"name": "Senses", "rank": 0},
+			"tele": {"name": "Telekenesis", "rank": 0},
+			"therm": {"name": "Thermal", "rank": 0}
+		},
 		"species": {"value": ""},
 		"package": {"value":""},
 		"squad": {"value":""}

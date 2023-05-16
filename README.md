@@ -8,3 +8,5 @@ TODO:
 - Make weapons "rollable" for attack and damage rolls
 - Implement ammo as item
 - Set "clip" on ranged weapons as ammo max vs. current # of rounds
+- Implement reverse initiative order
+- Have skills display on NPC sheets

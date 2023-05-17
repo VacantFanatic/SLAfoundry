@@ -27,7 +27,7 @@
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": null,
   "url": "",
-  "manifest": "",
+  "manifest": "https://github.com/VacantFanatic/SLAfoundry/blob/main/slaindustries/system.json",
   "download": "",
   "license": "LICENSE.txt",
   "changelog": "CHANGELOG.md"

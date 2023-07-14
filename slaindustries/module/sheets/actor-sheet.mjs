@@ -91,7 +91,12 @@ export class slaindustriesActorSheet extends ActorSheet {
       1: [],
       2: [],
       3: [],
-      4: []
+      4: [],
+      5: [],
+      6: [],
+      7: [],
+      8: [],
+      9: []
     };
 
     // Iterate through items, allocating to containers

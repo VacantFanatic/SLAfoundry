@@ -5,8 +5,8 @@
   "version": "0.1",
   "compatibility": {
     "minimum": 10,
-    "verified": "10.287",
-    "maximum": 10
+    "verified": "11",
+    "maximum": 12
   },
   "authors": [{
     "name": "Asacolips"
@@ -27,7 +27,7 @@
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": null,
   "url": "",
-  "manifest": "https://github.com/VacantFanatic/SLAfoundry/blob/main/slaindustries/system.json",
+  "manifest": "",
   "download": "",
   "license": "LICENSE.txt",
   "changelog": "CHANGELOG.md"

@@ -9,3 +9,4 @@ TODO:
 - Set "clip" on ranged weapons as ammo max vs. current # of rounds
 - Implement reverse initiative order
 - Update NPC sheets - Items, Skills, attributes
+- Implement taget logic for combat

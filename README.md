@@ -2,6 +2,7 @@
 beta for SLA Industries for Foundry VTT
 
 TODO:
+- FIX THE MANIFEST INSTALL LINK
 - Group Forumlae by Discipline
 - Extend formulae attributes to cover DMG etc.
 - Make weapons "rollable" for attack and damage rolls

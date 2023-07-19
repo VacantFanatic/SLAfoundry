@@ -1,0 +1,28 @@
+{
+  "slaindustries.AbilityStr": "Strength",
+  "slaindustries.AbilityDex": "Dexterity",
+  "slaindustries.AbilityKnow": "Knowledge",
+  "slaindustries.AbilityConc": "Concentration",
+  "slaindustries.AbilityCha": "Charisma",
+  "slaindustries.AbilityCool": "Cool",
+  "slaindustries.AbilityLuck": "Luck/Ebb",
+  "slaindustries.AbilityClosing": "Closing",
+  "slaindustries.AbilityRush": "Rushing",
+
+  "slaindustries.AbilityStrAbbr": "str",
+  "slaindustries.AbilityDexAbbr": "dex",
+  "slaindustries.AbilityKnowAbbr": "know",
+  "slaindustries.AbilityConcAbbr": "conc",
+  "slaindustries.AbilityChaAbbr": "cha",
+  "slaindustries.AbilityCoolAbbr": "cool",
+  "slaindustries.AbilityLuckAbbr": "luck",
+  "slaindustries.AbilityClosingAbbr": "closing",
+  "slaindustries.AbilityRushAbbr": "rush",
+
+  "slaindustries.EffectCreate": "Create Effect",
+  "slaindustries.EffectToggle": "Toggle Effect",
+  "slaindustries.EffectEdit": "Edit Effect",
+  "slaindustries.EffectDelete": "Delete Effect",
+
+  "slaindustries.Add": "Add"
+}

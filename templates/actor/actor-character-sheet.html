@@ -66,9 +66,7 @@
 		
 		<div class="resource flex-group-center">
           <label for="system.init" class="resource-label rollable" data-roll = "d10 + {{system.init}}">Initiative</label>
-          <div class="resource-content flexrow flex-center flex-between">
-			<input type="text" name="system.init" value="{{system.init}}" data-dtype="Number"/>
-          </div>
+          <div class="resource-content flexrow flex-center flex-between"><p>{{system.init}}</p> </div>
         </div>
 		
       </div>
@@ -93,9 +91,7 @@
     <div class="tab attributes" data-group="primary" data-tab="attributes">
       <section class="grid grid-3col">
         <aside class="sidebar">
-          {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-          use both the "grid" and "grid-Ncol" class where "N" can be any number
-          from 1 to 12 and will create that number of columns.  --}}
+          {{!-- The grid classes are defined in scss/global/_grid.scss. To use, use both the "grid" and "grid-Ncol" class where "N" can be any number from 1 to 12 and will create that number of columns.  --}}
           <div class="abilities flexcol">
             {{#each system.abilities as |ability key|}}
             <div class="ability flexrow flex-group-center">

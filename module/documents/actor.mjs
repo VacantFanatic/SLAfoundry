@@ -46,8 +46,8 @@ export class slaindustriesActor extends Actor {
     if (actorData.type !== 'character') return;
 
     // Make modifications to data here. For example:
-    const systemData = actorData.system;
-	systemData.init = systemData.dex.value + systemData.conc.value;
+      const systemData = actorData.system;
+      systemData.init = systemData.abilities.dex.value + systemData.abilities.conc.value;
 
     // Loop through ability scores, and add their modifiers to our sheet output.
 	//for (let [key, ability] of Object.entries(systemData.abilities)) {

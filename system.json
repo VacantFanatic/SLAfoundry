@@ -30,7 +30,7 @@
   "secondaryTokenAttribute": null,
   "url": "https://github.com/VacantFanatic/SLAfoundry/releases/tag/Latest",
   "manifest": "https://raw.githubusercontent.com/VacantFanatic/SLAfoundry/main/system.json",
-  "download": "https://github.com/VacantFanatic/SLAfoundry/releases/download/Beta/system.zip",
+  "download": "https://github.com/VacantFanatic/SLAfoundry/releases/download/Beta/SLAfoundry.zip",
   "license": "LICENSE.txt",
   "changelog": "CHANGELOG.md"
 }

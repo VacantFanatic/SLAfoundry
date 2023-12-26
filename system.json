@@ -11,7 +11,7 @@
     "maximum": 12
   },
   "description": "Dev for SLA",
-  "download": "https://github.com/VacantFanatic/SLAfoundry/releases/download/LATEST/SLAfoundry.zip",
+  "download": "https://github.com/VacantFanatic/SLAfoundry/releases/download/DEV_0.1/SLAfoundry.zip",
   "esmodules": [ "module/slaindustries.mjs" ],
   "gridDistance": 2,
   "gridUnits": "m",
@@ -24,7 +24,7 @@
     }
   ],
   "license": "LICENSE.txt",
-  "manifest": "https://raw.githubusercontent.com/VacantFanatic/SLAfoundry/MAIN/system.json",
+  "manifest": "https://raw.githubusercontent.com/VacantFanatic/SLAfoundry/DEV/system.json",
   "packs": [],
   "primaryTokenAttribute": "health",
   "scripts": [],
@@ -34,3 +34,4 @@
   "url": "https://github.com/VacantFanatic/SLAfoundry/releases/tag/Latest",
   "version": "0.1.3"
 }
+

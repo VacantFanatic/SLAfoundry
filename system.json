@@ -2,7 +2,7 @@
   "id": "slaindustries",
   "title": "SLA Industries",
   "description": "Dev for SLA",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "compatibility": {
     "minimum": 10,
     "verified": "11",

@@ -1,22 +1,21 @@
 {
-  "id": "slaindustries",
-  "title": "SLA Industries",
-  "description": "Dev for SLA",
-  "version": "0.1.2",
-  "compatibility": {
-    "minimum": 10,
-    "verified": "11",
-    "maximum": 12
-  },
   "authors": [
     {
       "name": "Asacolips, Vacantfanatic"
     }
   ],
+  "changelog": "CHANGELOG.md",
+  "compatibility": {
+    "minimum": 10,
+    "verified": "11",
+    "maximum": 12
+  },
+  "description": "Dev for SLA",
+  "download": "https://github.com/VacantFanatic/SLAfoundry/releases/download/DEV/SLAfoundry.zip",
   "esmodules": [ "module/slaindustries.mjs" ],
-  "styles": [ "css/slaindustries.css" ],
-  "scripts": [],
-  "packs": [],
+  "gridDistance": 2,
+  "gridUnits": "m",
+  "id": "slaindustries",
   "languages": [
     {
       "lang": "en",
@@ -24,13 +23,14 @@
       "path": "lang/en.json"
     }
   ],
-  "gridDistance": 2,
-  "gridUnits": "m",
-  "primaryTokenAttribute": "health",
-  "secondaryTokenAttribute": null,
-  "url": "https://github.com/VacantFanatic/SLAfoundry/releases/tag/Latest",
-  "manifest": "https://raw.githubusercontent.com/VacantFanatic/SLAfoundry/DEV/system.json",
-  "download": "https://github.com/VacantFanatic/SLAfoundry/releases/download/DEV/SLAfoundry.zip",
   "license": "LICENSE.txt",
-  "changelog": "CHANGELOG.md"
+  "manifest": "https://raw.githubusercontent.com/VacantFanatic/SLAfoundry/DEV/system.json",
+  "packs": [],
+  "primaryTokenAttribute": "health",
+  "scripts": [],
+  "secondaryTokenAttribute": null,
+  "styles": [ "css/slaindustries.css" ],
+  "title": "SLA Industries",
+  "url": "https://github.com/VacantFanatic/SLAfoundry/releases/tag/Latest",
+  "version": "0.1.2"
 }

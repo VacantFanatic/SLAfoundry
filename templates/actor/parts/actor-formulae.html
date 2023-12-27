@@ -55,7 +55,7 @@
 		</div>
 	</div>
 	<div class="resource flex-group-center">
-		<label for="system.therm.value" class="resource-label rollable" data-roll = "d10 + {{system.therm.value}}d10">Thermal</label>
+		<label for="system.therm.value" class="resource-label rollable" data-roll = "{1d10+{{system.conc.value}}, {{system.therm.value}}d10 + {{system.conc.value}}}">Thermal</label>
 		<div class="resource-content flexrow flex-center flex-between">
 			<input type="number" name="system.therm.value" value="{{system.therm.value}}" data-dtype="Number"/>    
 		</div>

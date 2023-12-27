@@ -62,11 +62,11 @@
 	</div>
 </aside>
 <ol class="items-list">
-  {{#each formulae as |formulae domain|}}
+  {{#each formulae as |formulae discipline|}}
     <li class="item flexrow items-header">
-      <div class="item-name">{{domain}} formulae</div>
+      <div class="item-name">{{discipline}} formulae</div>
       <div class="item-controls">
-        <a class="item-control item-create" title="Create item" data-type="formulae" data-spell-level="{{domain}}"><i class="fas fa-plus"></i> Add {{domain}} formulae</a>
+        <a class="item-control item-create" title="Create item" data-type="formulae" data-spell-level="{{discipline}}"><i class="fas fa-plus"></i> Add {{discipline}} formulae</a>
       </div>
     </li>
     {{#each formulae as |item id|}}

@@ -228,21 +228,17 @@ export class slaindustriesActorSheet extends ActorSheet {
         const itemId = element.closest('.item').dataset.itemId;
         const item = this.actor.items.get(itemId);
         if (item) return item.roll();
-        }
+      }
 
-      if (dataset.rollType == 'skill') {
-        let rollString = "{1d10 + " + dataset.attribute + ",";
-        for (let i = 0; i < dataset.skill; i++) {
-            rollString = rollString + "1d10 + " + dataset.attribute + " ,";
-        }
-        rollString = rollString.replace(/,+$/, '');
-        rollString = rollString + "}";
-        let roll = new Roll(rollString);
-        roll.toMessage({
-            speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-            rollMode: game.settings.get('core', 'rollMode'),
-        });
-        return roll;
+        if (dataset.rollType == 'skill') {
+            let abty = this.actor.system.abilities[dataset.attribute];
+            let mod = abty.value;
+            let rolls = [new Roll("1d10+" + mod)];
+            for (let i = 0; i < dataset.skill; i++) {
+                rolls.push(new Roll("1d10+" + mod));
+            }
+            ChatMessage.create({rolls, type: CONST.CHAT_MESSAGE_TYPES.ROLL, flavor: "Rolling " + element.innerText });
+            return rolls;
       }
     }
 

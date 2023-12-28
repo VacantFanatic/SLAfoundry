@@ -5,7 +5,7 @@
     <div class="abilities flexcol">
         {{#each system.skills as |skill key|}}
         <div class="ability flexrow flex-group-center">
-			<label for="system.skills.{{key}}.name" class="resource-label rollable flexlarge align-left" data-roll="1d10 + {{skill.rank}}d10" data-label="{{skill.name}}">{{skill.name}}</label>
+			<label for="system.skills.{{key}}.name" class="resource-label rollable flexlarge align-left" data-roll-type="skill" data-skill= {{skill.rank}} data-attribute = "{{skill.attr}}" data-label="{{skill.name}}">{{skill.name}}</label>
 			<input type="text" name="system.skills.{{key}}.rank" value="{{skill.rank}}" data-dtype="Number"/>
         </div>
         {{/each}}

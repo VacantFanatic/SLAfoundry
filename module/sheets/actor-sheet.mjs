@@ -238,8 +238,6 @@ export class slaindustriesActorSheet extends ActorSheet {
         rollString = rollString.replace(/,+$/, '');
         rollString = rollString + "}";
         let roll = new Roll(rollString);
-        await roll.evaluate();
-        console.log(roll.result);
         roll.toMessage({
             speaker: ChatMessage.getSpeaker({ actor: this.actor }),
             rollMode: game.settings.get('core', 'rollMode'),

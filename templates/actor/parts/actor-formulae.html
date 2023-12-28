@@ -1,79 +1,76 @@
 <section class="grid grid-2col">
 <aside class="sidebar">
 	<div class="resource flex-group-center">
-		<label for="system.aware.value" class="resource-label rollable" data-roll = "d10 + {{system.aware.value}}d10">Awareness</label>
+		<label for="system.aware.value" class="resource-label rollable" data-roll-type="skill" data-skill="{{system.aware.value}}" data-attribute = "conc">Awareness</label>
 		<div class="resource-content flexrow flex-center flex-between">
 			<input type="number" name="system.aware.value" value="{{system.aware.value}}" data-dtype="Number"/>    
 		</div>
 	</div>
 	<div class="resource flex-group-center">
-		<label for="system.blast.value" class="resource-label rollable" data-roll = "d10 + {{system.blast.value}}d10">Blast</label>
+		<label for="system.blast.value" class="resource-label rollable" data-roll-type="skill" data-skill="{{system.blast.value}}" data-attribute = "conc">Blast</label>
 		<div class="resource-content flexrow flex-center flex-between">
 			<input type="number" name="system.blast.value" value="{{system.blast.value}}" data-dtype="Number"/>    
 		</div>
 	</div>
 	<div class="resource flex-group-center">
-		<label for="system.comm.value" class="resource-label rollable" data-roll = "d10 + {{system.comm.value}}d10">Communication</label>
+		<label for="system.comm.value" class="resource-label rollable" data-roll-type="skill" data-skill="{{system.comm.value}}" data-attribute = "conc">Communication</label>
 		<div class="resource-content flexrow flex-center flex-between">
 			<input type="number" name="system.comm.value" value="{{system.comm.value}}" data-dtype="Number"/>    
 		</div>
 	</div>
 	<div class="resource flex-group-center">
-		<label for="system.enh.value" class="resource-label rollable" data-roll = "d10 + {{system.enh.value}}d10">Enhance</label>
+		<label for="system.enh.value" class="resource-label rollable" data-roll-type="skill" data-skill="{{system.enh.value}}" data-attribute = "conc">Enhance</label>
 		<div class="resource-content flexrow flex-center flex-between">
 			<input type="number" name="system.enh.value" value="{{system.enh.value}}" data-dtype="Number"/>    
 		</div>
 	</div>
 	<div class="resource flex-group-center">
-		<label for="system.heal.value" class="resource-label rollable" data-roll = "d10 + {{system.heal.value}}d10">Heal</label>
+		<label for="system.heal.value" class="resource-label rollable" data-roll-type="skill" data-skill="{{system.heal.value}}" data-attribute = "conc">Heal</label>
 		<div class="resource-content flexrow flex-center flex-between">
 			<input type="number" name="system.heal.value" value="{{system.heal.value}}" data-dtype="Number"/>    
 		</div>
 	</div>
 	<div class="resource flex-group-center">
-		<label for="system.prot.value" class="resource-label rollable" data-roll = "d10 + {{system.prot.value}}d10">Protection</label>
+		<label for="system.prot.value" class="resource-label rollable" data-roll-type="skill" data-skill="{{system.prot.value}}" data-attribute = "conc">Protection</label>
 		<div class="resource-content flexrow flex-center flex-between">
 			<input type="number" name="system.prot.value" value="{{system.prot.value}}" data-dtype="Number"/>    
 		</div>
 	</div>
 	<div class="resource flex-group-center">
-		<label for="system.fold.value" class="resource-label rollable" data-roll = "d10 + {{system.fold.value}}d10">Reality Fold</label>
+		<label for="system.fold.value" class="resource-label rollable" data-roll-type="skill" data-skill="{{system.fold.value}}" data-attribute = "conc">Reality Fold</label>
 		<div class="resource-content flexrow flex-center flex-between">
 			<input type="number" name="system.fold.value" value="{{system.fold.value}}" data-dtype="Number"/>    
 		</div>
 	</div>
 	<div class="resource flex-group-center">
-		<label for="system.sense.value" class="resource-label rollable" data-roll = "d10 + {{system.sense.value}}d10">Senses</label>
+		<label for="system.sense.value" class="resource-label rollable" data-roll-type="skill" data-skill="{{system.sense.value}}" data-attribute = "conc">Senses</label>
 		<div class="resource-content flexrow flex-center flex-between">
 			<input type="number" name="system.sense.value" value="{{system.sense.value}}" data-dtype="Number"/>    
 		</div>
 	</div>
 	<div class="resource flex-group-center">
-		<label for="system.tele.value" class="resource-label rollable" data-roll = "d10 + {{system.tele.value}}d10">Telekenesis</label>
+		<label for="system.tele.value" class="resource-label rollable" data-roll-type="skill" data-skill="{{system.tele.value}}" data-attribute = "conc">Telekenesis</label>
 		<div class="resource-content flexrow flex-center flex-between">
 			<input type="number" name="system.tele.value" value="{{system.tele.value}}" data-dtype="Number"/>    
 		</div>
 	</div>
 	<div class="resource flex-group-center">
-		<label for="system.therm.value" class="resource-label rollable" data-roll = "d10 + {{system.therm.value}}d10">Thermal</label>
+		<label for="system.therm.value" class = "resource-label rollable" data-roll-type= "skill" data-skill = "{{system.therm.value}}" data-attribute="conc">Thermal</label>
 		<div class="resource-content flexrow flex-center flex-between">
 			<input type="number" name="system.therm.value" value="{{system.therm.value}}" data-dtype="Number"/>    
 		</div>
 	</div>
 </aside>
 <ol class="items-list">
-  {{#each formulae as |formulae rank|}}
+  {{#each formulae as |formulae discipline|}}
     <li class="item flexrow items-header">
-      <div class="item-name">Rank {{rank}} formulae</div>
-      <div class="item-controls">
-        <a class="item-control item-create" title="Create item" data-type="formulae" data-spell-level="{{rank}}"><i class="fas fa-plus"></i> Add rank {{rank}}</a>
-      </div>
+      <div class="item-name">{{discipline}} formulae</div>
     </li>
     {{#each formulae as |item id|}}
       <li class="item flexrow" data-item-id="{{item._id}}">
         <div class="item-name flexrow">
           <div class="item-image">
-            <a class="rollable" data-roll-type="item"><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a>
+            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
           </div>
           <h4>{{item.name}}</h4>
         </div>

@@ -36,7 +36,7 @@ export class slaindustriesItemSheet extends ItemSheet {
     const itemData = context.item;
 
     // Retrieve the roll data for TinyMCE editors.
-    context.rollData = {};
+    context.rolData = {};
     let actor = this.object?.parent ?? null;
     if (actor) {
       context.rollData = actor.getRollData();

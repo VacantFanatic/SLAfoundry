@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\lib",
+    "\\lib\\some-lib",
+    "\\module",
+    "\\module\\helpers",
+    "\\module\\sheets",
+    "\\templates",
+    "\\templates\\actor",
+    "\\templates\\actor\\parts",
+    "\\templates\\item"
+  ],
+  "SelectedNode": "\\templates\\actor\\parts\\actor-formulae.html",
+  "PreviewInSolutionExplorer": false
+}

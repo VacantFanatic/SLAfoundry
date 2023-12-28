@@ -24,8 +24,7 @@
 				"value": 1
 			},
 			"know": {
-				"value": 1
-				
+				"value": 1	
 			},
 			"conc": {
 				"value": 1
@@ -42,52 +41,228 @@
 				"max": 6
 			}			
 		},
-		"skills":{
-		  "climb":{"name": "Climbing","rank": 0},
-		  "melee":{"name": "Melee Weapons","rank": 0},
-		  "pole":{"name": "Polearms","rank": 0},
-		  "shield":{"name": "Shield Craft", "rank": 0},
-		  "support":{"name": "Support Weapons" , "rank": 0},
-		  "swim":{"name": "Swimming", "rank": 0},
-		  "throw":{"name": "Throwing", "rank": 0},
-		  "unarmed":{"name": "Unarmed", "rank": 0},
-		  "acro":{"name": "Acrobatics", "rank": 0},
-		  "ath":{"name": "Athletics", "rank": 0},
-		  "moto":{"name": "Motorcycle", "rank": 0},
-		  "forge":{"name": "Forgery", "rank": 0},
-		  "pistol":{"name": "Pistol", "rank": 0},
-		  "rifle":{"name": "Rifle", "rank": 0},
-		  "sleight":{"name": "Sleight of Hand", "rank": 0},
-		  "stealth":{"name": "Stealth", "rank": 0},
-		  "admin": {"name": "Administration & Finance", "rank": 0},
-		  "comp": {"name": "Computers", "rank": 0},
-		  "edu": {"name": "Education", "rank": 0},
-		  "forensics": {"name": "Forensics" , "rank": 0},
-		  "lang": {"name": "Language", "rank": 0},
-		  "lore": {"name": "Lore", "rank": 0},
-		  "med": {"name": "Medecine", "rank": 0},
-		  "street": {"name": "Streetwise" , "rank": 0},
-		  "demo": {"name": "Demolitions", "rank": 0},
-		  "drive": {"name": "Drive", "rank": 0},
-		  "detect": {"name": "Detection", "rank": 0},
-		  "pick": {"name": "Pick Locks", "rank": 0},
-		  "lips":{"name": "Read Lips", "rank": 0},
-		  "tac": {"name": "Tactics", "rank": 0},
-		  "tech": {"name": "Technical", "rank": 0},
-		  "track": {"name": "Tracking", "rank": 0},
-		  "dip": {"name": "Diplomacy", "rank": 0},
-		  "haggle": {"name": "Haggle", "rank": 0},
-		  "lead": {"name": "Leadership", "rank": 0},
-		  "oratory": {"name": "Oratory", "rank": 0},
-		  "per": {"name": "Persuasion", "rank": 0},
-		  "sed": {"name": "Seduction", "rank": 0},
-		  "bribe": {"name": "Bribe", "rank": 0},
-		  "gamble": {"name": "Gambling", "rank": 0},
-		  "intero": {"name": "Interrogation", "rank": 0},
-		  "intimid": {"name": "Intimidate", "rank": 0},
-		  "surv": {"name": "Survival", "rank": 0},
-		  "tort": {"name": "Torture", "rank": 0}	
-		},
+    "skills": {
+          "acro": {
+            "attr": "dex",
+            "name": "Acrobatics",
+            "rank": 0
+          },
+          "admin": {
+            "attr": "know",
+            "name": "Administration & Finance",
+            "rank": 0
+          },
+          "ath": {
+            "attr": "dex",
+            "name": "Athletics",
+            "rank": 0
+          },
+          "bribe": {
+            "attr": "cool",
+            "name": "Bribe",
+            "rank": 0
+          },
+          "climb": {
+            "name": "Climbing",
+            "rank": 0,
+            "attr": "str"
+          },
+          "comp": {
+            "attr": "know",
+            "name": "Computers",
+            "rank": 0
+          },
+          "demo": {
+            "attr": "conc",
+            "name": "Demolitions",
+            "rank": 0
+          },
+          "detect": {
+            "attr": "conc",
+            "name": "Detection",
+            "rank": 0
+          },
+          "dip": {
+            "attr": "cha",
+            "name": "Diplomacy",
+            "rank": 0
+          },
+          "drive": {
+            "name": "Drive",
+            "rank": 0,
+            "attr": "conc"
+          },
+          "edu": {
+            "name": "Education",
+            "rank": 0,
+            "attr": "know"
+          },
+          "forensics": {
+            "name": "Forensics",
+            "rank": 0,
+            "attr": "know"
+          },
+          "forge": {
+            "name": "Forgery",
+            "rank": 0,
+            "attr": "dex"
+          },
+          "gamble": {
+            "name": "Gambling",
+            "rank": 0,
+            "attr": "cool"
+          },
+          "haggle": {
+            "name": "Haggle",
+            "rank": 0,
+            "attr": "cha"
+          },
+          "intero": {
+            "name": "Interrogation",
+            "rank": 0,
+            "attr": "cool"
+          },
+          "intimid": {
+            "name": "Intimidate",
+            "rank": 0,
+            "attr": "cool"
+          },
+          "lang": {
+            "name": "Language",
+            "rank": 0,
+            "attr": "know"
+          },
+          "lead": {
+            "name": "Leadership",
+            "rank": 0,
+            "attr": "cha"
+          },
+          "lips": {
+            "name": "Read Lips",
+            "rank": 0,
+            "attr": "conc"
+          },
+          "lore": {
+            "name": "Lore",
+            "rank": 0,
+            "attr": "know"
+          },
+          "med": {
+            "name": "Medecine",
+            "rank": 0,
+            "attr": "know"
+          },
+          "melee": {
+            "name": "Melee Weapons",
+            "rank": 0,
+            "attr": "str"
+          },
+          "moto": {
+            "name": "Motorcycle",
+            "rank": 0,
+            "attr": "dex"
+          },
+          "oratory": {
+            "name": "Oratory",
+            "rank": 0,
+            "attr": "cha"
+          },
+          "per": {
+            "name": "Persuasion",
+            "rank": 0,
+            "attr": ""
+          },
+          "pick": {
+            "name": "Pick Locks",
+            "rank": 0,
+            "attr": "conc"
+          },
+          "pistol": {
+            "name": "Pistol",
+            "rank": 0,
+            "attr": "dex"
+          },
+          "pole": {
+            "name": "Polearms",
+            "rank": 0,
+            "attr": "str"
+          },
+          "rifle": {
+            "name": "Rifle",
+            "rank": 0,
+            "attr": "dex"
+          },
+          "sed": {
+            "name": "Seduction",
+            "rank": 0,
+            "attr": "cha"
+          },
+          "shield": {
+            "name": "Shield Craft",
+            "rank": 0,
+            "attr": ""
+          },
+          "sleight": {
+            "name": "Sleight of Hand",
+            "rank": 0,
+            "attr": "dex"
+          },
+          "stealth": {
+            "name": "Stealth",
+            "rank": 0,
+            "attr": "dex"
+          },
+          "street": {
+            "name": "Streetwise",
+            "rank": 0,
+            "attr": "know"
+          },
+          "support": {
+            "name": "Support Weapons",
+            "rank": 0,
+            "attr": "str"
+          },
+          "surv": {
+            "name": "Survival",
+            "rank": 0,
+            "attr": ""
+          },
+          "swim": {
+            "name": "Swimming",
+            "rank": 0,
+            "attr": "str"
+          },
+          "tac": {
+            "name": "Tactics",
+            "rank": 0,
+            "attr": "conc"
+          },
+          "tech": {
+            "attr": "conc",
+            "name": "Technical",
+            "rank": 0
+          },
+          "throw": {
+            "name": "Throwing",
+            "rank": 0,
+            "attr": "str"
+          },
+          "tort": {
+            "name": "Torture",
+            "rank": 0,
+            "attr": ""
+          },
+          "track": {
+            "name": "Tracking",
+            "rank": 0,
+            "attr": "conc"
+          },
+          "unarmed": {
+            "name": "Unarmed",
+            "rank": 0,
+            "attr": "str"
+          }
+        },
 		"biography": ""
       }
     },
@@ -171,7 +346,7 @@
     "formulae": {
       "templates": ["base"],
       "rank": 0,
-	  "domain": "",
+	  "discipline": "",
 	  "fr": 0,
 	  "duration": ""
     }

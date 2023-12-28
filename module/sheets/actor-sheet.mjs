@@ -88,15 +88,16 @@ export class slaindustriesActorSheet extends ActorSheet {
 	const armor = [];
     const traits = [];
     const formulae = {
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: []
+      "Awareness": [],
+      "Blast": [],
+      "Communication": [],
+      "Enhance": [],
+      "Heal": [],
+      "Protection": [],
+      "Reality Fold": [],
+      "Senses": [],
+      "Telekenesis": [],
+      "Thermal": []
     };
 
     // Iterate through items, allocating to containers
@@ -125,7 +126,7 @@ export class slaindustriesActorSheet extends ActorSheet {
       // Append to formulae.
       else if (i.type === 'formulae') {
         if (i.system.rank != undefined) {
-          formulae[i.system.rank].push(i);
+          formulae[i.system.discipline].push(i);
         }
       }
     }
@@ -227,6 +228,17 @@ export class slaindustriesActorSheet extends ActorSheet {
         const itemId = element.closest('.item').dataset.itemId;
         const item = this.actor.items.get(itemId);
         if (item) return item.roll();
+      }
+
+        if (dataset.rollType == 'skill') {
+            let abty = this.actor.system.abilities[dataset.attribute];
+            let mod = abty.value;
+            let rolls = [new Roll("1d10+" + mod)];
+            for (let i = 0; i < dataset.skill; i++) {
+                rolls.push(new Roll("1d10+" + mod));
+            }
+            ChatMessage.create({rolls, type: CONST.CHAT_MESSAGE_TYPES.ROLL, flavor: "Rolling " + element.innerText });
+            return rolls;
       }
     }
 

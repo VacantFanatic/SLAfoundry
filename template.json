@@ -362,9 +362,9 @@
     },
     "ranged": {
       "templates": [ "weapon" ],
-      "rof": 0,
-      "recoil": 0,
-      "range": "10m",
+      "rof": "",
+      "recoil": "",
+      "range": 0,
       "clip": 0
     },
     "armor": {

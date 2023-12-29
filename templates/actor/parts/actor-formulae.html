@@ -1,5 +1,6 @@
 <section class="grid grid-2col">
 <aside class="sidebar">
+	<h2>Disciplines</h2>
 	<div class="resource flex-group-center">
 		<label for="system.aware.value" class="resource-label rollable" data-roll-type="skill" data-skill="{{system.aware.value}}" data-attribute = "conc">Awareness</label>
 		<div class="resource-content flexrow flex-center flex-between">
@@ -61,25 +62,27 @@
 		</div>
 	</div>
 </aside>
+
 <ol class="items-list">
-  {{#each formulae as |formulae discipline|}}
-    <li class="item flexrow items-header">
-      <div class="item-name">{{discipline}} formulae</div>
-    </li>
-    {{#each formulae as |item id|}}
-      <li class="item flexrow" data-item-id="{{item._id}}">
-        <div class="item-name flexrow">
-          <div class="item-image">
-            <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-          </div>
-          <h4>{{item.name}}</h4>
-        </div>
+	<h2>Formulae</h2>
+	{{#each formulae as |formulae discipline|}}
+	<li class="item flexrow items-header">
+		<div class="item-name">{{discipline}} formulae</div>
+	</li>
+	{{#each formulae as |item id|}}
+	<li class="item flexrow" data-item-id="{{item._id}}">
+		<div class="item-name flexrow">
+			<div class="item-image">
+				<img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+			</div>
+			<h4>{{item.name}}</h4>
+		</div>
 		<div class="item-controls">
 			<!--<a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>-->
 			<a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
 		</div>
-</li>
-    {{/each}}
-  {{/each}}
+	</li>
+	{{/each}}
+	{{/each}}
 </ol>
 </section>

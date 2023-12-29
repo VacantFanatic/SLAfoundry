@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
+    "types": [ "character", "npc" ],
     "templates": {
       "base": {
         "health": {
@@ -8,40 +8,40 @@
           "min": 0,
           "max": 10
         },
-		"movement": {
-			"closing": {
-				"value": 2
-			},
-			"rush": {
-				"value": 5
-			}
-		},
-		"abilities": {
-			"str": {
-				"value": 1
-			},
-			"dex": {
-				"value": 1
-			},
-			"know": {
-				"value": 1	
-			},
-			"conc": {
-				"value": 1
-			},
-			"cha": {
-				"value": 1
-			},
-			"cool": {
-				"value": 1
-			},
-			"luck": {
-				"value": 1,
-				"min": 0,
-				"max": 6
-			}			
-		},
-    "skills": {
+        "movement": {
+          "closing": {
+            "value": 2
+          },
+          "rush": {
+            "value": 5
+          }
+        },
+        "abilities": {
+          "str": {
+            "value": 1
+          },
+          "dex": {
+            "value": 1
+          },
+          "know": {
+            "value": 1
+          },
+          "conc": {
+            "value": 1
+          },
+          "cha": {
+            "value": 1
+          },
+          "cool": {
+            "value": 1
+          },
+          "luck": {
+            "value": 1,
+            "min": 0,
+            "max": 6
+          }
+        },
+        "skills": {
           "acro": {
             "attr": "dex",
             "name": "Acrobatics",
@@ -263,92 +263,127 @@
             "attr": "str"
           }
         },
-		"biography": ""
+        "biography": ""
       }
     },
     "character": {
-      "templates": ["base"],
+      "templates": [ "base" ],
       "attributes": {
         "scl": {
           "value": 10
         },
-		"ratings":{
-			"body": {"name": "Body", "value": 0},
-			"brains": {"name": "Brains", "value": 0},
-			"bravado": {"name": "Bravado", "value": 0}
-		},
-		"disciplines":{
-			"aware": {"name": "Awareness", "rank": 0},
-			"blast": {"name": "Blast", "rank": 0},
-			"comm": {"name": "Communication", "rank": 0},
-			"enh": {"name": "Enhance", "rank": 0},
-			"heal": {"name": "Heal", "rank": 0},
-			"prot": {"name": "Protection", "rank": 0},
-			"fold": {"name": "Reality Fold", "rank": 0},
-			"sense": {"name": "Senses", "rank": 0},
-			"tele": {"name": "Telekenesis", "rank": 0},
-			"therm": {"name": "Thermal", "rank": 0}
-		},
-		"species": {"value": ""},
-		"package": {"value":""},
-		"squad": {"value":""}
+        "ratings": {
+          "body": {
+            "name": "Body",
+            "value": 0
+          },
+          "brains": {
+            "name": "Brains",
+            "value": 0
+          },
+          "bravado": {
+            "name": "Bravado",
+            "value": 0
+          }
+        },
+        "disciplines": {
+          "aware": {
+            "name": "Awareness",
+            "rank": 0
+          },
+          "blast": {
+            "name": "Blast",
+            "rank": 0
+          },
+          "comm": {
+            "name": "Communication",
+            "rank": 0
+          },
+          "enh": {
+            "name": "Enhance",
+            "rank": 0
+          },
+          "heal": {
+            "name": "Heal",
+            "rank": 0
+          },
+          "prot": {
+            "name": "Protection",
+            "rank": 0
+          },
+          "fold": {
+            "name": "Reality Fold",
+            "rank": 0
+          },
+          "sense": {
+            "name": "Senses",
+            "rank": 0
+          },
+          "tele": {
+            "name": "Telekenesis",
+            "rank": 0
+          },
+          "therm": {
+            "name": "Thermal",
+            "rank": 0
+          }
+        }
       }
     },
     "npc": {
-      "templates": ["base"]
+      "templates": [ "base" ]
     }
   },
   "Item": {
-    "types": ["item", "trait", "formulae", "armor", "ranged", "melee"],
+    "types": [ "item", "trait", "formulae", "armor", "ranged", "melee"],
     "templates": {
       "base": {
         "description": ""
       },
-	  "weapon": {
-		"quantity": 1,
-		"weight": 0,
-		"cost": 0,
-		"skill": "",
-		"dmg": "",
-		"min_dmg": 0,
-		"ad": 0,
-		"skill": ""
-		}
+      "weapon": {
+        "ad": 0,
+        "cost": 0,
+        "dmg": "",
+        "min_dmg": 0,
+        "quantity": 1,
+        "skill": "",
+        "weight": 0
+      }
     },
     "item": {
-      "templates": ["base"],
+      "templates": [ "base" ],
       "quantity": 1,
-	  "weight": 0,
-	  "cost": 0,
-	  "formula": ""
+      "weight": 0,
+      "cost": 0,
+      "formula": ""
     },
-	"melee":{
-		"templates":["weapon"]
-	},
-	"ranged":{
-		"templates": ["weapon"],
-		"rof": 0,
-		"recoil": 0,
-		"range": "10m",
-		"clip": 0
-	},
-	"armor":{
-		"templates":["base"],
-		"weight": 0,
-		"cost": 0,
-		"pv": 0,
-		"resist": 0
-	},
+    "melee": {
+      "templates": [ "weapon" ]
+    },
+    "ranged": {
+      "templates": [ "weapon" ],
+      "rof": 0,
+      "recoil": 0,
+      "range": "10m",
+      "clip": 0
+    },
+    "armor": {
+      "templates": [ "base" ],
+      "weight": 0,
+      "cost": 0,
+      "pv": 0,
+      "resist": 0
+    },
     "trait": {
-      "templates": ["base"],
-	  "effect": ""
+      "templates": [ "base" ],
+      "effect": ""
     },
     "formulae": {
-      "templates": ["base"],
+      "templates": [ "base" ],
       "rank": 0,
-	  "discipline": "",
-	  "fr": 0,
-	  "duration": ""
+      "discipline": "",
+      "fr": 0,
+      "duration": ""
     }
   }
 }

@@ -34,10 +34,13 @@
     {{!-- Attributes Tab --}}
     <div class="tab attributes" data-group="primary" data-tab="attributes">
       {{!-- As you add new fields, add them in here! --}}
-		<div class="resource">
-			<label class="resource-label">Skill</label>
-			<input type="text" name="system.skill" value="{{system.skill}}" data-dtype="String"/>
-		</div>
+        <div class="resource">
+            <label class="resource-label">Skill<input list="skill" name="system.skill" value="{{system.skill}}" /></label>
+            <datalist id="skill">
+                <option value="melee">
+                <option value="unarmed">
+            </datalist>
+        </div>
 		<div class="resource">
           <label class="resource-label">Damage</label>
           <input type="text" name="system.dmg" value="{{system.dmg}}" data-dtype="String"/>

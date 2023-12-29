@@ -2,7 +2,7 @@
 	{{!-- The grid classes are defined in scss/global/_grid.scss. To use,
     use both the "grid" and "grid-Ncol" class where "N" can be any number
     from 1 to 12 and will create that number of columns.  --}}
-    <div class="abilities flexcol">
+    <div class="abilities grid-2col">
         {{#each system.skills as |skill key|}}
         <div class="ability flexrow flex-group-center">
 			<label for="system.skills.{{key}}.name" class="resource-label rollable flexlarge align-left" data-roll-type="skill" data-skill= {{skill.rank}} data-attribute = "{{skill.attr}}" data-label="{{skill.name}}">{{skill.name}}</label>

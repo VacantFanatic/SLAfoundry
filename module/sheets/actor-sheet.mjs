@@ -240,29 +240,49 @@ export class slaindustriesActorSheet extends ActorSheet {
         if (item) return item.roll();
       }
 
-      if (dataset.rollType == 'skill') {
+    if (dataset.rollType == 'skill') {
         let abty = this.actor.system.abilities[dataset.attribute];
         let mod = abty.value + ~~dataset.skill;
-        let rolls = [new Roll("1d10+" + mod)];
+        let rolls = [new Roll("1d10+"+mod)];
         for (let i = 0; i < dataset.skill; i++) {
-            rolls.push(new Roll("1d10+" + mod));
+            rolls.push(new Roll("1d10+"+mod));
         }
         ChatMessage.create({rolls, type: CONST.CHAT_MESSAGE_TYPES.ROLL, flavor: "Rolling " + element.innerText });
         return rolls;
-      }
+    }
 
       if (dataset.rollType == 'ranged') {
           let abty = this.actor.system.abilities[dataset.attribute];
           let mod = abty.value;
           let skill = this.actor.system.skills[dataset.skill];
           let rank = skill.rank;
-          let rolls = [new Roll("1d10+" + mod)];
+          let rolls = [new Roll("1d10+"+mod)];
           for (let i = 0; i < rank; i++) {
-                rolls.push(new Roll("1d10+" + mod));
+                rolls.push(new Roll("1d10+"+mod));
           }
-          ChatMessage.create({ rolls, type: CONST.CHAT_MESSAGE_TYPES.ROLL, flavor: "Rolling " + dataset.skill });
+          ChatMessage.create({rolls, type: CONST.CHAT_MESSAGE_TYPES.ROLL, flavor: "Rolling " + dataset.skill });
           return rolls;
-      }
+        }
+
+        if (dataset.rollType == 'melee') {
+            let abty = this.actor.system.abilities[dataset.attribute];
+            let mod = abty.value;
+            let skill = this.actor.system.skills[dataset.skill];
+            let rank = skill.rank;
+            let rolls = [new Roll("1d10+"+mod)];
+            for (let i = 0; i < rank; i++) {
+                    rolls.push(new Roll("1d10+"+mod));
+            }
+            ChatMessage.create({rolls, type: CONST.CHAT_MESSAGE_TYPES.ROLL, flavor: "Rolling " + dataset.skill });
+            return rolls;
+        }
+
+        if (dataset.rollType === 'damage') {
+            let formula = dataset.formula;
+            let roll = new Roll(formula);
+            ChatMessage.create({ roll, type: CONST.CHAT_MESSAGE_TYPES.ROLL, flavor: "Rolling Damage! Minimum Damage: "+dataset.min });
+            return roll;
+        }
 
     }
 

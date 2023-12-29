@@ -65,7 +65,7 @@
         </div>
 		
 		<div class="resource flex-group-center">
-          <label for="system.init" class="resource-label rollable" data-roll = "d10 + {{system.init}}">Initiative</label>
+          <label for="system.init" class="resource-label">Initiative</label>
           <div class="resource-content flexrow flex-center flex-between"><p>{{system.init}}</p> </div>
         </div>
 		
@@ -101,9 +101,8 @@
             {{/each}}		
           </div>
 		  <br>
-		  <div>Ratings</div>
-		  <div class="resource flex-group-center">
-          <label for="system.init" class="resource-label">Body</label>
+		  <H2>Ratings</H2>
+		  <label for="system.init" class="resource-label">Body</label>
           <div class="resource-content flexrow flex-center flex-between">
 			<input type="number" name="system.body.value" value="{{system.body.value}}" data-dtype="Number"/>
           </div>
@@ -118,7 +117,7 @@
         </aside>
 
         {{!-- For the main traits list, span the right two columns --}}
-        <section class="main grid-span-2">
+        <section class="main grid-span-2"><H3>Traits</H3>
           {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
           {{> "systems/slaindustries/templates/actor/parts/actor-traits.html"}}
         </section>
@@ -129,7 +128,12 @@
 	{{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="description">
       {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
-      {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
+      
+        <h3>Biography</h3>
+        {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
+        <h3>Notes</h3>
+        {{editor system.notes target="system.notes" rollData=rollData button=true owner=owner editable=editable}}
+
     </div>
 	
 	{{!-- Skills Tab --}}
@@ -138,19 +142,21 @@
     </div>
 	
     {{!-- Owned Items Tab --}}
-    <div class="tab items" data-group="primary" data-tab="items">
-		<div>Items</div>
-       {{> "systems/slaindustries/templates/actor/parts/actor-items.html"}}
-	   <br>
-	   <div>Ranged Weapons</div>
-	   {{> "systems/slaindustries/templates/actor/parts/actor-ranged.html"}}
-	   <br>
-	   <div>Melee Weapons</div>
-	   {{> "systems/slaindustries/templates/actor/parts/actor-melee.html"}}
-	   <br>
-	   <div>Armor</div>
-	   {{> "systems/slaindustries/templates/actor/parts/actor-armor.html"}}
-    </div>
+  <div class="tab items" data-group="primary" data-tab="items">
+      <h4>Current enc: {{system.encumbrance.current}} / Max enc: {{system.encumbrance.max}}</h4>
+      <h4>Credits: </h4><input class="flexshrink" type="number" name="system.credits" value="{{system.credits}}" data-dtype="Number" />
+      <h2>Ranged Weapons</h2>
+      {{> "systems/slaindustries/templates/actor/parts/actor-ranged.html"}}
+      <br>
+      <h2>Melee Weapons</h2>
+      {{> "systems/slaindustries/templates/actor/parts/actor-melee.html"}}
+      <br>
+      <h2>Armor</h2>
+      {{> "systems/slaindustries/templates/actor/parts/actor-armor.html"}}
+      <br>
+      <h2>Items</h2>
+      {{> "systems/slaindustries/templates/actor/parts/actor-items.html"}}
+  </div>
 
     {{!-- Owned ebb formulae Tab --}}
     <div class="tab spells" data-group="primary" data-tab="formulae">

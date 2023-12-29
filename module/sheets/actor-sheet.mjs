@@ -82,6 +82,8 @@ export class slaindustriesActorSheet extends ActorSheet {
    */
   _prepareItems(context) {
     // Initialize containers.
+    //const species = [];
+    //const package = [];
     const gear = [];
 	const ranged =[];
 	const melee = [];
@@ -103,6 +105,14 @@ export class slaindustriesActorSheet extends ActorSheet {
     // Iterate through items, allocating to containers
     for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
+      /*// Append to species.
+      if (i.type === 'species') {
+        species.push(i);
+        }
+      //Append to package.
+      if (i.type === 'package') {
+        package.push(i);
+      }*/
       // Append to gear.
       if (i.type === 'item') {
         gear.push(i);
@@ -230,16 +240,30 @@ export class slaindustriesActorSheet extends ActorSheet {
         if (item) return item.roll();
       }
 
-        if (dataset.rollType == 'skill') {
-            let abty = this.actor.system.abilities[dataset.attribute];
-            let mod = abty.value;
-            let rolls = [new Roll("1d10+" + mod)];
-            for (let i = 0; i < dataset.skill; i++) {
-                rolls.push(new Roll("1d10+" + mod));
-            }
-            ChatMessage.create({rolls, type: CONST.CHAT_MESSAGE_TYPES.ROLL, flavor: "Rolling " + element.innerText });
-            return rolls;
+      if (dataset.rollType == 'skill') {
+        let abty = this.actor.system.abilities[dataset.attribute];
+        let mod = abty.value;
+        let rolls = [new Roll("1d10+" + mod)];
+        for (let i = 0; i < dataset.skill; i++) {
+            rolls.push(new Roll("1d10+" + mod));
+        }
+        ChatMessage.create({rolls, type: CONST.CHAT_MESSAGE_TYPES.ROLL, flavor: "Rolling " + element.innerText });
+        return rolls;
       }
+
+      if (dataset.rollType == 'ranged') {
+          let abty = this.actor.system.abilities[dataset.attribute];
+          let mod = abty.value;
+          let skill = this.actor.system.skills[dataset.skill];
+          let rank = skill.rank;
+          let rolls = [new Roll("1d10+" + mod)];
+          for (let i = 0; i < rank; i++) {
+                rolls.push(new Roll("1d10+" + mod));
+          }
+          ChatMessage.create({ rolls, type: CONST.CHAT_MESSAGE_TYPES.ROLL, flavor: "Rolling " + dataset.skill });
+          return rolls;
+      }
+
     }
 
     // Handle rolls that supply the formula directly.

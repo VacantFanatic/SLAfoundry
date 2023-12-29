@@ -12,7 +12,7 @@
   },
   "description": "Dev for SLA",
   "download": "https://github.com/VacantFanatic/SLAfoundry/releases/download/DEV_0.1/SLAfoundry.zip",
-  "esmodules": [ "module/slaindustries.mjs" ],
+  "esmodules": [ "module/slaindustries.mjs", "module/SLA-dragruler.mjs" ],
   "gridDistance": 2,
   "gridUnits": "m",
   "id": "slaindustries",
@@ -32,5 +32,5 @@
   "styles": [ "css/slaindustries.css" ],
   "title": "SLA Industries",
   "url": "https://github.com/VacantFanatic/SLAfoundry/releases/tag/Latest",
-  "version": "0.1.58"
+  "version": "0.2.17"
 }

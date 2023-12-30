@@ -34,12 +34,7 @@
           },
           "cool": {
             "value": 1
-          },
-          "luck": {
-            "value": 1,
-            "min": 0,
-            "max": 6
-          }
+          }          
         },
         "skills": {
           "acro": {
@@ -272,6 +267,23 @@
         "scl": {
           "value": 10
         },
+        "luck": {
+          "value": 1,
+          "min": 0,
+          "max": 6
+        },
+        "enc": {
+          "cur": 0,
+          "max": 0
+        },
+        "finance": {
+          "credits": 0,
+          "unis": 0,
+          "LAD Balance": 0
+        },
+        "xp": {
+          "value": 0
+        },
         "ratings": {
           "body": {
             "name": "Body",
@@ -376,7 +388,9 @@
     },
     "trait": {
       "templates": [ "base" ],
-      "effect": ""
+      "effect": "",
+      "rank": 0,
+      "points": 0
     },
     "formulae": {
       "templates": [ "base" ],

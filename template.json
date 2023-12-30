@@ -280,7 +280,7 @@
         "finance": {
           "credits": 0,
           "unis": 0,
-          "LAD Balance": 0
+          "LAD_balance": 0
         },
         "xp": {
           "value": 0

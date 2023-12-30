@@ -82,8 +82,6 @@ export class slaindustriesActorSheet extends ActorSheet {
    */
   _prepareItems(context) {
     // Initialize containers.
-    //const species = [];
-    //const package = [];
     const gear = [];
 	const ranged =[];
 	const melee = [];
@@ -103,33 +101,29 @@ export class slaindustriesActorSheet extends ActorSheet {
     };
 
     // Iterate through items, allocating to containers
+      let curWT = 0;
       for (let i of context.items) {
-          //calculate current encumberance here?
-       
+      //calculate current encumberance here?
       i.img = i.img || DEFAULT_TOKEN;
-      /*// Append to species.
-      if (i.type === 'species') {
-        species.push(i);
-        }
-      //Append to package.
-      if (i.type === 'package') {
-        package.push(i);
-      }*/
       // Append to gear.
       if (i.type === 'item') {
-        gear.push(i);
+          gear.push(i);
+          curWT += i.system.weight;
       }
 	  //Append to ranged
 	  else if (i.type === 'ranged') {
-        ranged.push(i);
+          ranged.push(i);
+          curWT += i.system.weight;
       }
 	  //Append to melee
 	  else if (i.type === 'melee') {
-        melee.push(i);
+          melee.push(i);
+          curWT += i.system.weight;
       }
 	  //Append to armor
 	  else if (i.type === 'armor') {
-        armor.push(i);
+          armor.push(i);
+          curWT += i.system.weight;
       }
       // Append to traits.
       else if (i.type === 'trait') {
@@ -150,6 +144,7 @@ export class slaindustriesActorSheet extends ActorSheet {
 	context.armor = armor;
     context.traits = traits;
     context.formulae = formulae;
+    context.system.attributes.enc.cur = curWT;
   }
 
   /* -------------------------------------------- */

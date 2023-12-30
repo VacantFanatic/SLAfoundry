@@ -9,6 +9,6 @@
     "\\templates\\actor",
     "\\templates\\actor\\parts"
   ],
-  "SelectedNode": "\\system.json",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }

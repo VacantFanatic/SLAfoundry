@@ -1,16 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\lib",
-    "\\lib\\some-lib",
     "\\module",
+    "\\module\\documents",
     "\\module\\helpers",
     "\\module\\sheets",
     "\\templates",
     "\\templates\\actor",
-    "\\templates\\actor\\parts",
-    "\\templates\\item"
+    "\\templates\\actor\\parts"
   ],
-  "SelectedNode": "\\templates\\actor\\parts\\actor-formulae.html",
+  "SelectedNode": "\\system.json",
   "PreviewInSolutionExplorer": false
 }

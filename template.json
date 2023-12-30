@@ -267,6 +267,7 @@
         "scl": {
           "value": 10
         },
+        "LAD": 0,
         "luck": {
           "value": 1,
           "min": 0,

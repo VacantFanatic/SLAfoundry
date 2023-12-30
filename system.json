@@ -10,10 +10,10 @@
     "verified": "11",
     "maximum": 12
   },
-  "description": "Dev for SLA",
+  "description": "An unofficial, community supported system for playing SLA Industries 2e on Foundry. This system is an independent production and not affiliated with Nightfall Games.",
   "download": "https://github.com/VacantFanatic/SLAfoundry/releases/download/Latest/SLAfoundry.zip",
   "esmodules": [ "module/slaindustries.mjs", "module/SLA-dragruler.mjs" ],
-  "gridDistance": 2,
+  "gridDistance": 1,
   "gridUnits": "m",
   "id": "slaindustries",
   "languages": [
@@ -28,9 +28,9 @@
   "packs": [],
   "primaryTokenAttribute": "health",
   "scripts": [],
-  "secondaryTokenAttribute": null,
+  "secondaryTokenAttribute": "luck",
   "styles": [ "css/slaindustries.css" ],
   "title": "SLA Industries",
   "url": "https://github.com/VacantFanatic/SLAfoundry",
-  "version": "0.4"
+  "version": "0.4.2"
 }

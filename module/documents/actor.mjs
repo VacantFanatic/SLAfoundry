@@ -48,7 +48,67 @@ export class slaindustriesActor extends Actor {
     // Make modifications to data here. For example:
       const systemData = actorData.system;
       systemData.init = systemData.abilities.dex.value + systemData.abilities.conc.value;
-
+      //add max encumberance calc here
+      let str = systemData.abilities.str.value;
+      if (str < 3) {
+         systemData.attributes.enc.max = 8;
+      }
+      else {
+         systemData.attributes.enc.max = str * 3;
+      }
+      let s = systemData.attributes.species.value;
+      switch (s) {
+          case "Human": 
+          case "Frother":
+          case "Ebonite":
+          case "Neophron":
+          default:
+              systemData.movement.closing.value = 2;
+              systemData.movement.rush.value = 5;
+              break;
+          case "Stormer 313 'Malice'":
+          case "Shaktar":
+              systemData.movement.closing.value = 3;
+              systemData.movement.rush.value = 6;
+              break;
+          case "Stormer 717 'Xeno'":
+              systemData.movement.closing.value = 4;
+              systemData.movement.rush.value = 6;
+              break;
+          case "Advanced Carrien":
+              systemData.movement.closing.value = 4;
+              systemData.movement.rush.value = 7;
+              break;
+          case "Wraithen":
+              systemData.movement.closing.value = 4;
+              systemData.movement.rush.value = 8;
+              break;              
+      }
+      switch (s) {
+          case "Neophron":
+              systemData.health.max = 11 + str;
+              break;
+          case "Human":
+          case "Ebonite":
+          default:
+              systemData.health.max = 14 + str;
+              break;
+          case "Stormer 313 'Malice'":
+              systemData.health.max = 22 + str;
+          case "Shaktar":
+              systemData.health.max = 19 + str;
+              break;
+          case "Stormer 717 'Xeno'":
+          case "Advanced Carrien":
+              systemData.health.max = 20 + str;
+              break;
+          case "Wraithen":
+              systemData.health.max = 14 + str;
+              break; 
+          case "Frother":
+              systemData.health.max = 15 + str;
+              break;
+      }
     // Loop through ability scores, and add their modifiers to our sheet output.
 	//for (let [key, ability] of Object.entries(systemData.abilities)) {
       // Calculate the modifier using d20 rules.

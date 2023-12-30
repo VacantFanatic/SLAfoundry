@@ -11,8 +11,8 @@ export class slaindustriesActorSheet extends ActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["slaindustries", "sheet", "actor"],
       template: "systems/slaindustries/templates/actor/actor-sheet.html",
-      width: 600,
-      height: 600,
+      width:850,
+      height: 750,
       tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "traits" }]
     });
   }
@@ -70,7 +70,7 @@ export class slaindustriesActorSheet extends ActorSheet {
     // Handle ability scores.
     for (let [k, v] of Object.entries(context.system.abilities)) {
       v.label = game.i18n.localize(CONFIG.slaindustries.abilities[k]) ?? k;
-    }
+      }
   }
 
   /**
@@ -103,7 +103,9 @@ export class slaindustriesActorSheet extends ActorSheet {
     };
 
     // Iterate through items, allocating to containers
-    for (let i of context.items) {
+      for (let i of context.items) {
+          //calculate current encumberance here?
+       
       i.img = i.img || DEFAULT_TOKEN;
       /*// Append to species.
       if (i.type === 'species') {

@@ -44,9 +44,9 @@ export class slaindustriesActor extends Actor {
    */
   _prepareCharacterData(actorData) {
     if (actorData.type !== 'character') return;
-
-    // Make modifications to data here. For example:
+      // Make modifications to data here. For example:
       const systemData = actorData.system;
+      actorData.updateSource({ 'prototypeToken.actorLink': true });
       systemData.init = systemData.abilities.dex.value + systemData.abilities.conc.value;
       //add max encumberance calc here
       let str = systemData.abilities.str.value;

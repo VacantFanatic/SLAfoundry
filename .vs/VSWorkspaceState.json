@@ -1,14 +1,14 @@
 {
   "ExpandedNodes": [
     "",
+    "\\css",
     "\\module",
-    "\\module\\documents",
     "\\module\\helpers",
     "\\module\\sheets",
     "\\templates",
     "\\templates\\actor",
     "\\templates\\actor\\parts"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\system.json",
   "PreviewInSolutionExplorer": false
 }

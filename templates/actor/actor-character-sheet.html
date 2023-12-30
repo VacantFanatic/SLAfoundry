@@ -68,10 +68,10 @@
             <div class="resource-content flexrow flex-center flex-between"><p>{{system.init}}</p> </div>
         </div>
 
-        <div class="resource flex-group-center">
+        <!--<div class="resource flex-group-center">
             <label for="LAD" class="resource-label">LAD Account</label>
-            <input type="checkbox" id="LAD" name="system.LAD" value={{system.init}}/>
-        </div>
+            <input type="checkbox" id="LAD" name="system.attributes.LAD" value={{system.attributes.LAD}}/>
+        </div>-->
     </div>
   </div>
   </div>
@@ -108,7 +108,7 @@
                     <div class="resource-content flexrow flex-center flex-between">
                         <input type="text" name="system.attributes.luck.value" value="{{system.attributes.luck.value}}" data-dtype="Number" />
                         <span> / </span>
-                        <input type="text" name="system.attributes.luck.value" value="{{system.attributes.luck.max}}" data-dtype="Number" />
+                        <input type="text" name="system.attributes.luck.max" value="{{system.attributes.luck.max}}" data-dtype="Number" />
                     </div>
                 </div>
             </div>

@@ -4,6 +4,8 @@
  */
 export class slaindustriesActor extends Actor {
 
+
+
   /** @override */
   prepareData() {
     // Prepare data for the actor. Calling the super version of this executes
@@ -39,6 +41,15 @@ export class slaindustriesActor extends Actor {
     this._prepareNpcData(actorData);
   }
 
+    // Override _preCreate so that we can apply default token settings.
+  async _preCreate(data, options, userId) {
+      await super._preCreate(data, options, userId);
+      if (data.type === 'character') {
+          this.updateSource({ 'prototypeToken.actorLink': true });
+      }
+  }
+
+
   /**
    * Prepare Character type specific data
    */
@@ -46,7 +57,6 @@ export class slaindustriesActor extends Actor {
     if (actorData.type !== 'character') return;
       // Make modifications to data here. For example:
       const systemData = actorData.system;
-      actorData.updateSource({ 'prototypeToken.actorLink': true });
       systemData.init = systemData.abilities.dex.value + systemData.abilities.conc.value;
       //add max encumberance calc here
       let str = systemData.abilities.str.value;
@@ -121,7 +131,6 @@ export class slaindustriesActor extends Actor {
    */
   _prepareNpcData(actorData) {
     if (actorData.type !== 'npc') return;
-
     // Make modifications to data here. For example:
     const systemData = actorData.system;
     //systemData.xp = (systemData.cr * systemData.cr) * 100;

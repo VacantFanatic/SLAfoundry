@@ -240,8 +240,9 @@ export class slaindustriesActorSheet extends ActorSheet {
     if (dataset.rollType == 'skill') {
         let abty = this.actor.system.abilities[dataset.attribute];
         let mod = abty.value + ~~dataset.skill;
+	let rank = dataset.skill + 1;
         let rolls = [new Roll("1d10+"+mod)];
-        for (let i = 0; i < dataset.skill; i++) {
+        for (let i = 0; i < rank; i++) {
             rolls.push(new Roll("1d10+"+mod));
         }
         ChatMessage.create({rolls, type: CONST.CHAT_MESSAGE_TYPES.ROLL, flavor: "Rolling " + element.innerText });
@@ -252,7 +253,7 @@ export class slaindustriesActorSheet extends ActorSheet {
           let abty = this.actor.system.abilities[dataset.attribute];
           let mod = abty.value;
           let skill = this.actor.system.skills[dataset.skill];
-          let rank = skill.rank;
+          let rank = skill.rank + 1;
           let rolls = [new Roll("1d10+"+mod)];
           for (let i = 0; i < rank; i++) {
                 rolls.push(new Roll("1d10+"+mod));
@@ -265,7 +266,7 @@ export class slaindustriesActorSheet extends ActorSheet {
             let abty = this.actor.system.abilities[dataset.attribute];
             let mod = abty.value;
             let skill = this.actor.system.skills[dataset.skill];
-            let rank = skill.rank;
+            let rank = skill.rank + 1;
             let rolls = [new Roll("1d10+"+mod)];
             for (let i = 0; i < rank; i++) {
                     rolls.push(new Roll("1d10+"+mod));

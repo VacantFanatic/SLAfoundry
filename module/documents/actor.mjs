@@ -13,13 +13,16 @@ export class slaindustriesActor extends Actor {
     // prepareBaseData(), prepareEmbeddedDocuments() (including active effects),
     // prepareDerivedData().
     super.prepareData();
-  }
+    }
+
+
 
   /** @override */
   prepareBaseData() {
     // Data modifications in this step occur before processing embedded
-    // documents or derived data.
+      // documents or derived data.
   }
+
 
   /**
    * @override
@@ -32,7 +35,6 @@ export class slaindustriesActor extends Actor {
    */
   prepareDerivedData() {
     const actorData = this;
-    const systemData = actorData.system;
     const flags = actorData.flags.slaindustries || {};
 
     // Make separate methods for each Actor type (character, npc, etc.) to keep
@@ -57,65 +59,65 @@ export class slaindustriesActor extends Actor {
     if (actorData.type !== 'character') return;
       // Make modifications to data here. For example:
       const systemData = actorData.system;
-      systemData.init = systemData.abilities.dex.value + systemData.abilities.conc.value;
+      systemData.init = systemData.abilities.dex + systemData.abilities.conc;
       //add max encumberance calc here
-      let str = systemData.abilities.str.value;
+      let str = systemData.abilities.str;
       if (str < 3) {
-         systemData.attributes.enc.max = 8;
+         systemData.enc.max = 8;
       }
       else {
-         systemData.attributes.enc.max = str * 3;
+         systemData.enc.max = str * 3;
       }
-      let s = systemData.attributes.species.value;
+      let s = systemData.species;
       switch (s) {
-          case "Human": 
-          case "Frother":
-          case "Ebonite":
-          case "Neophron":
+          case "human": 
+          case "froth":
+          case "ebb":
+          case "neo":
           default:
-              systemData.movement.closing.value = 2;
-              systemData.movement.rush.value = 5;
+              systemData.movement.closing = 2;
+              systemData.movement.rush= 5;
               break;
-          case "Stormer 313 'Malice'":
-          case "Shaktar":
-              systemData.movement.closing.value = 3;
-              systemData.movement.rush.value = 6;
+          case "storm_313":
+          case "shaktar":
+              systemData.movement.closing = 3;
+              systemData.movement.rush = 6;
               break;
-          case "Stormer 717 'Xeno'":
-              systemData.movement.closing.value = 4;
-              systemData.movement.rush.value = 6;
+          case "storm_717":
+              systemData.movement.closing = 4;
+              systemData.movement.rush = 6;
               break;
-          case "Advanced Carrien":
-              systemData.movement.closing.value = 4;
-              systemData.movement.rush.value = 7;
+          case "advCar":
+              systemData.movement.closing = 4;
+              systemData.movement.rush = 7;
               break;
-          case "Wraithen":
-              systemData.movement.closing.value = 4;
-              systemData.movement.rush.value = 8;
+          case "wraith":
+              systemData.movement.closing = 4;
+              systemData.movement.rush = 8;
               break;              
       }
       switch (s) {
-          case "Neophron":
+          case "neo":
               systemData.health.max = 11 + str;
               break;
-          case "Human":
-          case "Ebonite":
+          case "human":
+          case "ebb":
           default:
               systemData.health.max = 14 + str;
               break;
-          case "Stormer 313 'Malice'":
+          case "storm_313":
               systemData.health.max = 22 + str;
-          case "Shaktar":
+          case "shaktar":
               systemData.health.max = 19 + str;
               break;
-          case "Stormer 717 'Xeno'":
+          case "storm_717":
           case "Advanced Carrien":
               systemData.health.max = 20 + str;
               break;
-          case "Wraithen":
+          case "wraith":
               systemData.health.max = 14 + str;
               break; 
-          case "Frother":
+          case "froth":
               systemData.health.max = 15 + str;
               break;
       }
@@ -164,8 +166,8 @@ export class slaindustriesActor extends Actor {
     }
 
     // Add level for easier access, or fall back to 0.
-    if (data.attributes.scl) {
-      data.scl = data.attributes.scl.value ?? 10;
+    if (data.scl) {
+      data.scl = data.scl ?? "10";
     }
   }
 

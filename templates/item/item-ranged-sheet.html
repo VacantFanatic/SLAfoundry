@@ -34,14 +34,16 @@
     {{!-- Attributes Tab --}}
     <div class="tab attributes" data-group="primary" data-tab="attributes">
       {{!-- As you add new fields, add them in here! --}}
-      <div class="resource">
-        <label class="resource-label">Skill: <input list="skill" name="system.skill" value="{{system.skill}}" /></label>
-            <datalist id="skill">
-                <option value="pistol">
-                <option value="rifle">
-                <option value="support">
-             </datalist>
-      </div>
+        <div class="resource">
+            <label class="resource-label">Skill</label>
+            <select name="item.weapon.skill">
+                {{#select item.weapon.skill}}
+                {{#each config.rangeSkills as |name skill|}}
+                <option value="{{skill}}">{{localize name}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>
 	  <div class="resource">
           <label class="resource-label">Damage</label>
           <input type="text" name="system.dmg" value="{{system.dmg}}" data-dtype="String"/>

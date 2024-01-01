@@ -15,6 +15,7 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
+    "eslint": "^8.56.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-sass": "^5.1.0",

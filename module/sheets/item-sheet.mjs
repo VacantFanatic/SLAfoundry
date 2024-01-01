@@ -30,7 +30,8 @@ export class slaindustriesItemSheet extends ItemSheet {
   /** @override */
   getData() {
     // Retrieve base data structure.
-    const context = super.getData();
+      const context = super.getData();
+      context.config = CONFIG.slaindustries
 
     // Use a safe clone of the item data for further operations.
     const itemData = context.item;

@@ -1,203 +1,216 @@
 <form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
 
-  {{!-- Sheet Header --}}
-  <header class="sheet-header">
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-    <div class="header-fields">
-        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-        {{!-- The grid classes are defined in scss/global/_grid.scss. To use, use both the "grid" and "grid-Ncol" class where "N" can be any number from 1 to 12 and will create that number of columns.  --}}
-    <div class="resources grid grid-3col">
-        {{!--"flex-group-center" is also defined in the _grid.scss file and it will add a small amount of padding, a border, and willcenter all of its child elements content and text. --}}
-        <div class="resource flex-group-center">
-            <label for="system.health.value" class="resource-label">Health</label>
-            <div class="resource-content flexrow flex-center flex-between">
-                <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number" />
-                <span> / </span>
-                <div class="resource-content flexrow flex-center flex-between"><p>{{system.health.max}}</p></div>
-            </div>
-        </div>
-
-        <div class="resource flex-group-center">
-            <label for="system.attributes.scl.value" class="resource-label">SCL</label>
-            <div class="resource-content flexrow flex-center flex-basis">
-                <input type="text" name="system.attributes.scl.value" value="{{system.attributes.scl.value}}" data-dtype="String" />
-            </div>
-        </div>
-
-        <div class="resource flex-group-center">
-            <label class="resource-label">Species: <input list="species" name="system.attributes.species.value" value="{{system.attributes.species.value}}" /></label>
-            <datalist id="species">
-                <option value="Human">
-                <option value="Frother">
-                <option value="Ebonite">
-                <option value="Stormer 313 'Malice'">
-                <option value="Stormer 717 'Xeno'">
-                <option value="Shaktar">
-                <option value="Wraithen">
-                <option value="Advanced Carrien">
-                <option value="Neophron">
-            </datalist>
-        </div>
-
-        <div class="resource flex-group-center">
-            <label for="system.attributes.squad.value" class="resource-label">Squad</label>
-            <div class="resource-content flexrow flex-center flex-between">
-                <input type="text" name="system.attributes.squad.value" value="{{system.attributes.squad.value}}" data-dtype="String" />
-            </div>
-        </div>
-
-        <div class="resource flex-group-center">
-            <label for="system.attributes.package.value" class="resource-label">Package</label>
-            <div class="resource-content flexrow flex-center flex-between">
-                <input type="text" name="system.attributes.package.value" value="{{system.attributes.package.value}}" data-dtype="String" />
-            </div>
-        </div>
-
-        <div class="resource flex-group-center">
-            <label for="system.attributes.package.value" class="resource-label">XP</label>
-            <div class="resource-content flexrow flex-center flex-between">
-                <input type="text" name="system.attributes.xp.value" value="{{system.attributes.xp.value}}" data-dtype="Number" />
-            </div>
-        </div>
-
-        <div class="resource flex-group-center">
-            <label for="system.movement.closing.value" class="resource-label">Closing</label>
-            <div class="resource-content flexrow flex-center flex-between"><p>{{system.movement.closing.value}}</p></div>
-        </div>
-
-        <div class="resource flex-group-center">
-            <label for="system.movement.rush.value" class="resource-label">Rushing</label>
-            <div class="resource-content flexrow flex-center flex-between"><p>{{system.movement.rush.value}}</p></div>
-        </div>
-
-        <div class="resource flex-group-center">
-            <label for="system.init" class="resource-label">Initiative</label>
-            <div class="resource-content flexrow flex-center flex-between"><p>{{system.init}}</p> </div>
-        </div>
-
-        <!--<div class="resource flex-group-center">
-        <label for="LAD" class="resource-label">LAD Account</label>
-        <input type="checkbox" id="LAD" name="system.attributes.LAD" value={{system.attributes.LAD}}/>
-    </div>-->
-    </div>
-  </div>
-  </div>
-  </header>
-
-  {{!-- Sheet Tab Navigation --}}
-  <nav class="sheet-tabs tabs" data-group="primary">
-    {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="attributes">Attributes</a>
-	<a class="item" data-tab="skills">Skills</a>
-    <a class="item" data-tab="items">Items</a>
-    <a class="item" data-tab="formulae">Formulae</a>
-	<a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="effects">Effects</a>
-  </nav>
-
-  {{!-- Sheet Body --}}
-  <section class="sheet-body">
-
-    {{!-- Owned traits Tab --}}
-    <div class="tab attributes" data-group="primary" data-tab="attributes">
-      <section class="grid grid-3col">
-        <aside class="sidebar">
-          {{!-- The grid classes are defined in scss/global/_grid.scss. To use, use both the "grid" and "grid-Ncol" class where "N" can be any number from 1 to 12 and will create that number of columns.  --}}
-            <div class="abilities flexcol">
-                {{#each system.abilities as |ability key|}}
-                <div class="ability flexrow flex-group-center">
-                    <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d10+@abilities.{{key}}.value" data-label="{{ability.label}}">{{ability.label}}</label>
-                    <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number" />
-                </div>
-                {{/each}}
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+            {{!-- The grid classes are defined in scss/global/_grid.scss. To use, use both the "grid" and "grid-Ncol" class where "N" can be any number from 1 to 12 and will create that number of columns.  --}}
+            <div class="resources grid grid-3col">
+                {{!--"flex-group-center" is also defined in the _grid.scss file and it will add a small amount of padding, a border, and willcenter all of its child elements content and text. --}}
                 <div class="resource flex-group-center">
-                    <label for="system.attributes.luck.value" class="resource-label">Luck</label>
+                    <label for="system.health.value" class="resource-label">Health</label>
                     <div class="resource-content flexrow flex-center flex-between">
-                        <input type="text" name="system.attributes.luck.value" value="{{system.attributes.luck.value}}" data-dtype="Number" />
+                        <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number" />
                         <span> / </span>
-                        <input type="text" name="system.attributes.luck.max" value="{{system.attributes.luck.max}}" data-dtype="Number" />
+                        <div class="resource-content flexrow flex-center flex-between"><p>{{system.health.max}}</p></div>
                     </div>
                 </div>
+
+                <div class="resource flex-group-center">
+                    <label for="system.scl.value" class="resource-label">SCL</label>
+                    <div class="resource-content flexrow flex-center flex-basis">
+                        <input type="text" name="system.scl" value="{{system.scl}}" data-dtype="String" />
+                    </div>
+                </div>
+
+                <div class="resource flex-group-center">
+                    <label for="system.species" class="resource-label">{{localize 'Species'}}</label>
+                    <select name="system.species">
+                        {{#select actor.system.species}}
+                        {{#each config.species as |name species|}}
+                        <option value="{{species}}">{{localize name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+
+                <div class="resource flex-group-center">
+                    <label for="system.attributes.squad.value" class="resource-label">{{localize 'slaindustries.Squad'}}</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text" name="system.squad" value="{{system.squad}}" data-dtype="String" />
+                    </div>
+                </div>
+
+                <div class="resource flex-group-center">
+                    <label for="system.attributes.package.value" class="resource-label">Package</label>
+                    <select name="system.package">
+                        {{#select actor.system.package}}
+                        {{#each config.package as |name pack|}}
+                        <option value="{{pack}}">{{localize name}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </div>
+
+                <div class="resource flex-group-center">
+                    <label for="system.attributes.package.value" class="resource-label">XP</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text" name="system.xp" value="{{system.xp}}" data-dtype="Number" />
+                    </div>
+                </div>
+
+                <div class="resource flex-group-center">
+                    <label for="system.movement.closing" class="resource-label">Closing</label>
+                    <div class="resource-content flexrow flex-center flex-between"><p>{{system.movement.closing}}</p></div>
+                </div>
+
+                <div class="resource flex-group-center">
+                    <label for="system.movement.rush" class="resource-label">Rushing</label>
+                    <div class="resource-content flexrow flex-center flex-between"><p>{{system.movement.rush}}</p></div>
+                </div>
+
+                <div class="resource flex-group-center">
+                    <label for="system.init" class="resource-label">Initiative</label>
+                    <div class="resource-content flexrow flex-center flex-between"><p>{{system.init}}</p> </div>
+                </div>
+
+                <!--<div class="resource flex-group-center">
+                    <label for="LAD" class="resource-label">LAD Account</label>
+                    <input type="checkbox" id="LAD" name="system.attributes.LAD" value={{system.attributes.LAD}}/>
+                </div>-->
             </div>
-		  <br>
-		  <H2>Ratings</H2>
-		  <label for="system.init" class="resource-label">Body</label>
-          <div class="resource-content flexrow flex-center flex-between">
-			<input type="number" name="system.body.value" value="{{system.body.value}}" data-dtype="Number"/>
-          </div>
-		  <label for="system.init" class="resource-label">Brains</label>
-		  <div class="resource-content flexrow flex-center flex-between">
-			<input type="number" name="system.brains.value" value="{{system.brains.value}}" data-dtype="Number"/>
-          </div>
-		  <label for="system.init" class="resource-label">Bravado</label>
-		  <div class="resource-content flexrow flex-center flex-between">
-			<input type="number" name="system.bravado.value" value="{{system.bravado.value}}" data-dtype="Number"/>
-          </div>
-        </aside>
+        </div>
+        </div>
+    </header>
 
-        {{!-- For the main traits list, span the right two columns --}}
-        <section class="main grid-span-2"><H3>Traits</H3>
-          {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-          {{> "systems/slaindustries/templates/actor/parts/actor-traits.html"}}
-        </section>
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        {{!-- Default tab is specified in actor-sheet.mjs --}}
+        <a class="item" data-tab="attributes">Attributes</a>
+        <a class="item" data-tab="skills">Skills</a>
+        <a class="item" data-tab="items">Items</a>
+        <a class="item" data-tab="formulae">Formulae</a>
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="effects">Effects</a>
+    </nav>
 
-      </section>
-    </div>
-	
-	{{!-- Biography Tab --}}
-    <div class="tab biography" data-group="primary" data-tab="description">
-      {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
-      
-        <h3>Biography</h3>
-        {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
-        <h3>Notes</h3>
-        {{editor system.notes target="system.notes" rollData=rollData button=true owner=owner editable=editable}}
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
 
-    </div>
-	
-	{{!-- Skills Tab --}}
-    <div class="tab items" data-group="primary" data-tab="skills">
-      {{> "systems/slaindustries/templates/actor/parts/actor-skills.html"}}
-    </div>
-	
-    {{!-- Owned Items Tab --}}
-  <div class="tab items" data-group="primary" data-tab="items">
-      <div class="resource flexrow baseline flex-between">
-          <label for="system.encumbrance.current" class="resource-label">Current Encumberance: </label>
-          <div class="resource-content"><p>{{system.attributes.enc.cur}}</p> </div>
-          <label for="system.encumbrance.max" class="resource-label">Maximum Encumberance: </label>
-          <div class="resource-content"><p>{{system.attributes.enc.max}}</p> </div>
-      </div>
-      <div class="flexrow flex-start flex-between">
-          <label for="system.finance.credits" class="resource-label">Credits: </label>
-          <input class="flex" type="number" name="system.attributes.finance.credits" value="{{system.attributes.finance.credits}}" data-dtype="Number" />
-          <label for="system.finance.credits" class="resource-label">Unis: </label>
-          <input class="flex" type="number" name="system.attributes.finance.unis" value="{{system.attributes.finance.unis}}" data-dtype="Number" />
-          <label for="system.finance.credits" class="resource-label ">LAD Balance: </label>
-          <input class="flex" type="number" name="system.attributes.finance.LAD_balance" value="{{system.attributes.finance.LAD_balance}}" data-dtype="Number" />
-      </div>
-      <h2>Ranged Weapons</h2>
-      {{> "systems/slaindustries/templates/actor/parts/actor-ranged.html"}}
-      <br>
-      <h2>Melee Weapons</h2>
-      {{> "systems/slaindustries/templates/actor/parts/actor-melee.html"}}
-      <br>
-      <h2>Armor</h2>
-      {{> "systems/slaindustries/templates/actor/parts/actor-armor.html"}}
-      <br>
-      <h2>Items</h2>
-      {{> "systems/slaindustries/templates/actor/parts/actor-items.html"}}
-  </div>
+        {{!-- Owned traits Tab --}}
+        <div class="tab attributes" data-group="primary" data-tab="attributes">
+            <section class="grid grid-3col">
+                <aside class="sidebar">
+                    {{!-- The grid classes are defined in scss/global/_grid.scss. To use, use both the "grid" and "grid-Ncol" class where "N" can be any number from 1 to 12 and will create that number of columns.  --}}
+                    <div class="abilities flexcol">
+                        {{#each config.abilities as |ability key|}}
+                        <div class="ability flexrow flex-group-center">
+                            <label for="system.abilities.{{key}}" class="resource-label rollable flexlarge align-left" data-roll="d10+@abilities.{{key}}">{{localize ability}}</label>
+                            <input type="text" name="system.abilities.{{key}}" value="{{lookup ../system.abilities key}}" data-dtype="Number" />
+                        </div>
+                        {{/each}}
+                        <div class="resource flex-group-center">
+                            <label for="system.attributes.luck.value" class="resource-label">Luck</label>
+                            <div class="resource-content flexrow flex-center flex-between">
+                                <input type="text" name="system.luck.value" value="{{system.luck.value}}" data-dtype="Number" />
+                                <span> / </span>
+                                <input type="text" name="system.luck.max" value="{{system.luck.max}}" data-dtype="Number" />
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <H2>Ratings</H2>
+                    <label for="system.init" class="resource-label">Body</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="number" name="system.ratings.body" value="{{system.ratings.body}}" data-dtype="Number" />
+                    </div>
+                    <label for="system.init" class="resource-label">Brains</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="number" name="system.ratings.brains" value="{{system.ratings.brains}}" data-dtype="Number" />
+                    </div>
+                    <label for="system.init" class="resource-label">Bravado</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="number" name="system.ratings.bravado" value="{{system.ratings.bravado}}" data-dtype="Number" />
+                    </div>
+                </aside>
 
-    {{!-- Owned ebb formulae Tab --}}
-    <div class="tab spells" data-group="primary" data-tab="formulae">
-      {{> "systems/slaindustries/templates/actor/parts/actor-formulae.html"}}
-    </div>
+                {{!-- For the main traits list, span the right two columns --}}
+                <section class="main grid-span-2">
+                    <H3>Traits</H3>
+                    {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
+                    {{> "systems/slaindustries/templates/actor/parts/actor-traits.html"}}
+                </section>
 
-    {{!-- Active Effects Tab --}}
-    <div class="tab effects flexcol" data-group="primary" data-tab="effects">
-      {{> "systems/slaindustries/templates/actor/parts/actor-effects.html"}}
-    </div>
-  </section>
+            </section>
+        </div>
+
+        {{!-- Biography Tab --}}
+        <div class="tab biography" data-group="primary" data-tab="description">
+            {{!-- If you want TinyMCE editors to output inline rolls when rendered, you need to pass the actor's roll data to the rollData property. --}}
+
+            <h3>Biography</h3>
+            {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
+            <h3>Notes</h3>
+            {{editor system.notes target="system.notes" rollData=rollData button=true owner=owner editable=editable}}
+
+        </div>
+
+        {{!-- Skills Tab --}}
+        <div class="tab items" data-group="primary" data-tab="skills">
+            {{> "systems/slaindustries/templates/actor/parts/actor-skills.html"}}
+        </div>
+
+        {{!-- Owned Items Tab --}}
+        <div class="tab items" data-group="primary" data-tab="items">
+            <div class="resource flexrow baseline flex-between">
+                <label for="system.encumbrance.current" class="resource-label">Current Encumberance: </label>
+                <div class="resource-content"><p>{{system.enc.cur}}</p> </div>
+                <label for="system.encumbrance.max" class="resource-label">Maximum Encumberance: </label>
+                <div class="resource-content"><p>{{system.enc.max}}</p> </div>
+            </div>
+            <div class="flexrow flex-start flex-between">
+                <label for="system.finance.credits" class="resource-label">Credits: </label>
+                <input class="flex" type="number" name="system.finance.credits" value="{{system.finance.credits}}" data-dtype="Number" />
+                <label for="system.finance.credits" class="resource-label">Unis: </label>
+                <input class="flex" type="number" name="system.finance.unis" value="{{system.finance.unis}}" data-dtype="Number" />
+                <label for="system.finance.credits" class="resource-label ">LAD Balance: </label>
+                <input class="flex" type="number" name="system.finance.LAD_balance" value="{{system.finance.LAD_balance}}" data-dtype="Number" />
+            </div>
+            <div class="grid-2col">
+                <div>
+                    <h2>Ranged Weapons</h2>
+                    {{> "systems/slaindustries/templates/actor/parts/actor-ranged.html"}}
+                </div>
+                <div>
+                    <h2>Melee Weapons</h2>
+                    {{> "systems/slaindustries/templates/actor/parts/actor-melee.html"}}
+                </div>
+                <div>
+                    <h2>Armor</h2>
+                    {{> "systems/slaindustries/templates/actor/parts/actor-armor.html"}}
+                </div>
+                <div>
+                    <h2>Drugs</h2>
+                    {{> "systems/slaindustries/templates/actor/parts/actor-drugs.html"}}
+                </div>
+            </div>
+            <div>
+                <h2>Items</h2>
+                {{> "systems/slaindustries/templates/actor/parts/actor-items.html"}}
+            </div>
+
+        </div>
+
+        {{!-- Owned ebb formulae Tab --}}
+        <div class="tab spells" data-group="primary" data-tab="formulae">
+            {{> "systems/slaindustries/templates/actor/parts/actor-formulae.html"}}
+        </div>
+
+        {{!-- Active Effects Tab --}}
+        <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+            {{> "systems/slaindustries/templates/actor/parts/actor-effects.html"}}
+        </div>
+    </section>
 </form>
 

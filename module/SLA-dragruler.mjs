@@ -10,8 +10,8 @@ Hooks.once("dragRuler.ready", (SpeedProvider) => {
 
         getRanges(token) {
 
-            let close = token.actor.system.movement.closing.value
-            let rush = token.actor.system.movement.rush.value
+            let close = token.actor.system.movement.closing
+            let rush = token.actor.system.movement.rush
             let hClose = close / 2
             let hRush = rush / 2
             let none = 0

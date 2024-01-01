@@ -31,6 +31,7 @@ export class slaindustriesActorSheet extends ActorSheet {
     // sheets are the actor object, the data object, whether or not it's
     // editable, the items array, and the effects array.
     const context = super.getData();
+    context.config = CONFIG.slaindustries;
 
     // Use a safe clone of the actor data for further operations.
     const actorData = this.actor.toObject(false);
@@ -69,8 +70,8 @@ export class slaindustriesActorSheet extends ActorSheet {
   _prepareCharacterData(context) {
     // Handle ability scores.
     for (let [k, v] of Object.entries(context.system.abilities)) {
-      v.label = game.i18n.localize(CONFIG.slaindustries.abilities[k]) ?? k;
-      }
+     //v.label = game.i18n.localize(CONFIG.slaindustries.abilities[k]) ?? k;
+    }
   }
 
   /**
@@ -87,6 +88,7 @@ export class slaindustriesActorSheet extends ActorSheet {
 	const melee = [];
 	const armor = [];
     const traits = [];
+    const drugs = [];
     const formulae = {
       "Awareness": [],
       "Blast": [],
@@ -135,7 +137,11 @@ export class slaindustriesActorSheet extends ActorSheet {
           formulae[i.system.discipline].push(i);
         }
       }
-    }
+      // Append to formulae.
+      else if (i.type === 'drug') {
+          drugs.push(i);
+      }
+  }
 
     // Assign and return
     context.gear = gear;
@@ -144,7 +150,8 @@ export class slaindustriesActorSheet extends ActorSheet {
 	context.armor = armor;
     context.traits = traits;
     context.formulae = formulae;
-    context.system.attributes.enc.cur = curWT;
+    context.drugs = drugs;
+    context.system.enc.cur = curWT;
   }
 
   /* -------------------------------------------- */
@@ -238,9 +245,10 @@ export class slaindustriesActorSheet extends ActorSheet {
       }
 
     if (dataset.rollType == 'skill') {
-        let abty = this.actor.system.abilities[dataset.attribute];
-        let mod = abty.value + ~~dataset.skill;
-		let rank = Number(dataset.skill) + 1;
+        let abty = this.actor.system.abilities[dataset.attribute] || 0;
+        let skill = this.actor.system.skills[dataset.skill] || 0;
+        let mod = abty + skill;
+		let rank = ~~skill + 1;
         let rolls = [new Roll("1d10+"+mod)];
         for (let i = 0; i < rank; i++) {
             rolls.push(new Roll("1d10+"+mod));
@@ -250,10 +258,10 @@ export class slaindustriesActorSheet extends ActorSheet {
     }
 
       if (dataset.rollType == 'ranged') {
-          let abty = this.actor.system.abilities[dataset.attribute];
-          let mod = abty.value;
+          let abty = dataset.attribute;
+          let mod = abty;
           let skill = this.actor.system.skills[dataset.skill];
-          let rank = skill.rank + 1;
+          let rank = skill + 1;
           let rolls = [new Roll("1d10+"+mod)];
           for (let i = 0; i < rank; i++) {
                 rolls.push(new Roll("1d10+"+mod));

@@ -1,14 +1,58 @@
-<ol class="items-list">
-	{{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-    use both the "grid" and "grid-Ncol" class where "N" can be any number
-    from 1 to 12 and will create that number of columns.  --}}
-    <div class="abilities grid-2col">
-        {{#each system.skills as |skill key|}}
-        <div class="ability flexrow flex-group-center">
-			<label for="system.skills.{{key}}.name" class="resource-label rollable flexlarge align-left" data-roll-type="skill" data-skill= {{skill.rank}} data-attribute = "{{skill.attr}}" data-label="{{skill.name}}">{{skill.name}}</label>
-			<input type="text" name="system.skills.{{key}}.rank" value="{{skill.rank}}" data-dtype="Number"/>
-        </div>
-        {{/each}}
-	</div>
-</ol>
+
+<h2>Strength Skills</h2>
+<div class="abilities grid-2col">
+    {{#each config.strSkills as |skill key|}}
+    <div class="ability flexrow flex-group-center">
+        <label for="system.skills.{{key}}" class="resource-label rollable flexlarge align-left" data-roll-type="skill" data-skill={{key}} data-attribute="str" data-label="{{skill.name}}">{{localize skill}}</label>
+        <input type="text" name="system.skills.{{key}}" value="{{lookup ../system.skills key}}" data-dtype="Number" />
+    </div>
+    {{/each}}
+</div>
+<h2>Dexterity Skills</h2>
+<div class="abilities grid-2col">
+    {{#each config.dexSkills as |skill key|}}
+    <div class="ability flexrow flex-group-center">
+        <label for="system.skills.{{key}}" class="resource-label rollable flexlarge align-left" data-roll-type="skill" data-skill={{key}} data-attribute="dex" data-label="{{skill.name}}">{{localize skill}}</label>
+        <input type="text" name="system.skills.{{key}}" value="{{lookup ../system.skills key}}" data-dtype="Number" />
+    </div>
+    {{/each}}
+</div>
+<h2>Knowledge Skills</h2>
+<div class="abilities grid-2col">
+    {{#each config.knowSkills as |skill key|}}
+    <div class="ability flexrow flex-group-center">
+        <label for="system.skills.{{key}}" class="resource-label rollable flexlarge align-left" data-roll-type="skill" data-skill={{key}} data-attribute="know" data-label="{{skill.name}}">{{localize skill}}</label>
+        <input type="text" name="system.skills.{{key}}" value="{{lookup ../system.skills key}}" data-dtype="Number" />
+    </div>
+    {{/each}}
+</div>
+<h2>Concentration Skills</h2>
+<div class="abilities grid-2col">
+    {{#each config.concSkills as |skill key|}}
+    <div class="ability flexrow flex-group-center">
+        <label for="system.skills.{{key}}" class="resource-label rollable flexlarge align-left" data-roll-type="skill" data-skill={{key}} data-attribute="conc" data-label="{{skill.name}}">{{localize skill}}</label>
+        <input type="text" name="system.skills.{{key}}" value="{{lookup ../system.skills key}}" data-dtype="Number" />
+    </div>
+    {{/each}}
+</div>
+<h2>Charisma Skills</h2>
+<div class="abilities grid-2col">
+    {{#each config.chaSkills as |skill key|}}
+    <div class="ability flexrow flex-group-center">
+        <label for="system.skills.{{key}}" class="resource-label rollable flexlarge align-left" data-roll-type="skill" data-skill={{key}} data-attribute="cha" data-label="{{skill.name}}">{{localize skill}}</label>
+        <input type="text" name="system.skills.{{key}}" value="{{lookup ../system.skills key}}" data-dtype="Number" />
+    </div>
+    {{/each}}
+</div>
+<h2>Cool Skills</h2>
+<div class="abilities grid-2col">
+    {{#each config.coolSkills as |skill key|}}
+    <div class="ability flexrow flex-group-center">
+        <label for="system.skills.{{key}}" class="resource-label rollable flexlarge align-left" data-roll-type="skill" data-skill={{key}} data-attribute="cool" data-label="{{skill.name}}">{{localize skill}}</label>
+        <input type="text" name="system.skills.{{key}}" value="{{lookup ../system.skills key}}" data-dtype="Number" />
+    </div>
+    {{/each}}
+</div>
+
+
 

@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": [ "character", "npc" ],
+    "types": [ "character", "threat" ],
     "templates": {
       "base": {
         "health": {
@@ -9,265 +9,69 @@
           "max": 10
         },
         "movement": {
-          "closing": {
-            "value": 2
-          },
-          "rush": {
-            "value": 5
-          }
+          "closing": 2,
+          "rush": 5
         },
         "abilities": {
-          "str": {
-            "value": 1
-          },
-          "dex": {
-            "value": 1
-          },
-          "know": {
-            "value": 1
-          },
-          "conc": {
-            "value": 1
-          },
-          "cha": {
-            "value": 1
-          },
-          "cool": {
-            "value": 1
-          }          
+          "str": 1,
+          "dex": 1,
+          "know": 1,
+          "conc": 1,
+          "cha": 1,
+          "cool": 1
         },
         "skills": {
-          "acro": {
-            "attr": "dex",
-            "name": "Acrobatics",
-            "rank": 0
-          },
-          "admin": {
-            "attr": "know",
-            "name": "Administration & Finance",
-            "rank": 0
-          },
-          "ath": {
-            "attr": "dex",
-            "name": "Athletics",
-            "rank": 0
-          },
-          "bribe": {
-            "attr": "cool",
-            "name": "Bribe",
-            "rank": 0
-          },
-          "climb": {
-            "name": "Climbing",
-            "rank": 0,
-            "attr": "str"
-          },
-          "comp": {
-            "attr": "know",
-            "name": "Computers",
-            "rank": 0
-          },
-          "demo": {
-            "attr": "conc",
-            "name": "Demolitions",
-            "rank": 0
-          },
-          "detect": {
-            "attr": "conc",
-            "name": "Detection",
-            "rank": 0
-          },
-          "dip": {
-            "attr": "cha",
-            "name": "Diplomacy",
-            "rank": 0
-          },
-          "drive": {
-            "name": "Drive",
-            "rank": 0,
-            "attr": "conc"
-          },
-          "edu": {
-            "name": "Education",
-            "rank": 0,
-            "attr": "know"
-          },
-          "forensics": {
-            "name": "Forensics",
-            "rank": 0,
-            "attr": "know"
-          },
-          "forge": {
-            "name": "Forgery",
-            "rank": 0,
-            "attr": "dex"
-          },
-          "gamble": {
-            "name": "Gambling",
-            "rank": 0,
-            "attr": "cool"
-          },
-          "haggle": {
-            "name": "Haggle",
-            "rank": 0,
-            "attr": "cha"
-          },
-          "intero": {
-            "name": "Interrogation",
-            "rank": 0,
-            "attr": "cool"
-          },
-          "intimid": {
-            "name": "Intimidate",
-            "rank": 0,
-            "attr": "cool"
-          },
-          "lang": {
-            "name": "Language",
-            "rank": 0,
-            "attr": "know"
-          },
-          "lead": {
-            "name": "Leadership",
-            "rank": 0,
-            "attr": "cha"
-          },
-          "lips": {
-            "name": "Read Lips",
-            "rank": 0,
-            "attr": "conc"
-          },
-          "lore": {
-            "name": "Lore",
-            "rank": 0,
-            "attr": "know"
-          },
-          "med": {
-            "name": "Medecine",
-            "rank": 0,
-            "attr": "know"
-          },
-          "melee": {
-            "name": "Melee Weapons",
-            "rank": 0,
-            "attr": "str"
-          },
-          "moto": {
-            "name": "Motorcycle",
-            "rank": 0,
-            "attr": "dex"
-          },
-          "oratory": {
-            "name": "Oratory",
-            "rank": 0,
-            "attr": "cha"
-          },
-          "per": {
-            "name": "Persuasion",
-            "rank": 0,
-            "attr": ""
-          },
-          "pick": {
-            "name": "Pick Locks",
-            "rank": 0,
-            "attr": "conc"
-          },
-          "pistol": {
-            "name": "Pistol",
-            "rank": 0,
-            "attr": "dex"
-          },
-          "pole": {
-            "name": "Polearms",
-            "rank": 0,
-            "attr": "str"
-          },
-          "rifle": {
-            "name": "Rifle",
-            "rank": 0,
-            "attr": "dex"
-          },
-          "sed": {
-            "name": "Seduction",
-            "rank": 0,
-            "attr": "cha"
-          },
-          "shield": {
-            "name": "Shield Craft",
-            "rank": 0,
-            "attr": ""
-          },
-          "sleight": {
-            "name": "Sleight of Hand",
-            "rank": 0,
-            "attr": "dex"
-          },
-          "stealth": {
-            "name": "Stealth",
-            "rank": 0,
-            "attr": "dex"
-          },
-          "street": {
-            "name": "Streetwise",
-            "rank": 0,
-            "attr": "know"
-          },
-          "support": {
-            "name": "Support Weapons",
-            "rank": 0,
-            "attr": "str"
-          },
-          "surv": {
-            "name": "Survival",
-            "rank": 0,
-            "attr": ""
-          },
-          "swim": {
-            "name": "Swimming",
-            "rank": 0,
-            "attr": "str"
-          },
-          "tac": {
-            "name": "Tactics",
-            "rank": 0,
-            "attr": "conc"
-          },
-          "tech": {
-            "attr": "conc",
-            "name": "Technical",
-            "rank": 0
-          },
-          "throw": {
-            "name": "Throwing",
-            "rank": 0,
-            "attr": "str"
-          },
-          "tort": {
-            "name": "Torture",
-            "rank": 0,
-            "attr": ""
-          },
-          "track": {
-            "name": "Tracking",
-            "rank": 0,
-            "attr": "conc"
-          },
-          "unarmed": {
-            "name": "Unarmed",
-            "rank": 0,
-            "attr": "str"
-          }
+          "acro": 0,
+          "admin": 0,
+          "ath": 0,
+          "bribe": 0,
+          "climb": 0,
+          "comp": 0,
+          "demo": 0,
+          "detect": 0,
+          "dip": 0,
+          "drive": 0,
+          "edu": 0,
+          "forensics": 0,
+          "forge": 0,
+          "gamble": 0,
+          "haggle": 0,
+          "intero": 0,
+          "intimid": 0,
+          "lang": 0,
+          "lead": 0,
+          "lips": 0,
+          "lore": 0,
+          "med": 0,
+          "melee": 0,
+          "moto": 0,
+          "oratory": 0,
+          "per": 0,
+          "pick": 0,
+          "pistol": 0,
+          "pole": 0,
+          "rifle": 0,
+          "sed": 0,
+          "shield": 0,
+          "sleight": 0,
+          "stealth": 0,
+          "street": 0,
+          "support": 0,
+          "surv": 0,
+          "swim": 0,
+          "tac": 0,
+          "tech": 0,
+          "throw": 0,
+          "tort": 0,
+          "track": 0,
+          "unarmed": 0
         },
         "biography": ""
-      }
-    },
-    "character": {
-      "templates": [ "base" ],
-      "attributes": {
-        "scl": {
-          "value": 10
-        },
-        "LAD": 0,
+		}
+	},
+      "character": {
+        "templates": [ "base" ],
+        "scl": "10",
         "luck": {
           "value": 1,
           "min": 0,
@@ -282,123 +86,94 @@
           "unis": 0,
           "LAD_balance": 0
         },
-        "xp": {
-          "value": 0
-        },
+        "xp": 0,
         "ratings": {
-          "body": {
-            "name": "Body",
-            "value": 0
-          },
-          "brains": {
-            "name": "Brains",
-            "value": 0
-          },
-          "bravado": {
-            "name": "Bravado",
-            "value": 0
-          }
+          "body": 0,
+          "brains": 0,
+          "bravado": 0
         },
+        "species": "",
+        "package": "scout",
+        "squad": "",
         "disciplines": {
-          "aware": {
-            "name": "Awareness",
-            "rank": 0
-          },
-          "blast": {
-            "name": "Blast",
-            "rank": 0
-          },
-          "comm": {
-            "name": "Communication",
-            "rank": 0
-          },
-          "enh": {
-            "name": "Enhance",
-            "rank": 0
-          },
-          "heal": {
-            "name": "Heal",
-            "rank": 0
-          },
-          "prot": {
-            "name": "Protection",
-            "rank": 0
-          },
-          "fold": {
-            "name": "Reality Fold",
-            "rank": 0
-          },
-          "sense": {
-            "name": "Senses",
-            "rank": 0
-          },
-          "tele": {
-            "name": "Telekenesis",
-            "rank": 0
-          },
-          "therm": {
-            "name": "Thermal",
-            "rank": 0
-          }
+          "aware": 0,
+          "blast": 0,
+          "comm": 0,
+          "enh": 0,
+          "heal": 0,
+          "prot": 0,
+          "fold": 0,
+          "sense": 0,
+          "tele": 0,
+          "therm": 0
         }
-      }
-    },
-    "npc": {
-      "templates": [ "base" ]
-    }
-  },
-  "Item": {
-    "types": [ "item", "trait", "formulae", "armor", "ranged", "melee"],
-    "templates": {
-      "base": {
-        "description": ""
+
       },
-      "weapon": {
-        "ad": 0,
-        "cost": 0,
-        "dmg": "",
-        "min_dmg": 0,
+      "threat": {
+        "templates": [ "base" ]
+		}
+    },
+  "Item": {
+      "types": [ "item", "trait", "formulae", "armor", "ranged", "melee", "drug", "vehicle" ],
+      "templates": {
+        "base": {
+          "description": ""
+        },
+        "weapon": {
+          "ad": 0,
+          "cost": 0,
+          "dmg": "",
+          "min_dmg": 0,
+          "quantity": 1,
+          "skill": "",
+          "weight": 0
+        }
+      },
+      "item": {
+        "templates": [ "base" ],
         "quantity": 1,
-        "skill": "",
-        "weight": 0
+        "weight": 0,
+        "cost": 0,
+        "formula": ""
+      },
+      "melee": {
+        "templates": [ "weapon" ]
+      },
+      "ranged": {
+        "templates": [ "weapon" ],
+        "rof": "",
+        "recoil": "",
+        "range": 0,
+        "clip": 0
+      },
+      "armor": {
+        "templates": [ "base" ],
+        "weight": 0,
+        "cost": 0,
+        "pv": 0,
+        "resist": 0
+      },
+      "trait": {
+        "templates": [ "base" ],
+        "effect": "",
+        "rank": 0,
+        "points": 0
+      },
+      "formulae": {
+        "templates": [ "base" ],
+        "rank": 0,
+        "discipline": "",
+        "fr": 0,
+        "duration": ""
+      },
+      "drug": {
+        "templates": [ "base" ],
+        "effect": "",
+        "duration": "",
+        "cost": 0,
+        "ar": "",
+        "ad": "",
+        "detox": ""
       }
-    },
-    "item": {
-      "templates": [ "base" ],
-      "quantity": 1,
-      "weight": 0,
-      "cost": 0,
-      "formula": ""
-    },
-    "melee": {
-      "templates": [ "weapon" ]
-    },
-    "ranged": {
-      "templates": [ "weapon" ],
-      "rof": "",
-      "recoil": "",
-      "range": 0,
-      "clip": 0
-    },
-    "armor": {
-      "templates": [ "base" ],
-      "weight": 0,
-      "cost": 0,
-      "pv": 0,
-      "resist": 0
-    },
-    "trait": {
-      "templates": [ "base" ],
-      "effect": "",
-      "rank": 0,
-      "points": 0
-    },
-    "formulae": {
-      "templates": [ "base" ],
-      "rank": 0,
-      "discipline": "",
-      "fr": 0,
-      "duration": ""
     }
   }
-}

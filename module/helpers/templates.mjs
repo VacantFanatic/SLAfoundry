@@ -14,6 +14,7 @@
     "systems/slaindustries/templates/actor/parts/actor-effects.html",
 	"systems/slaindustries/templates/actor/parts/actor-ranged.html",
 	"systems/slaindustries/templates/actor/parts/actor-melee.html",
-	"systems/slaindustries/templates/actor/parts/actor-armor.html",
+    "systems/slaindustries/templates/actor/parts/actor-armor.html",
+    "systems/slaindustries/templates/actor/parts/actor-drugs.html",
   ]);
 };

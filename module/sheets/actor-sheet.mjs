@@ -240,7 +240,7 @@ export class slaindustriesActorSheet extends ActorSheet {
     if (dataset.rollType == 'skill') {
         let abty = this.actor.system.abilities[dataset.attribute];
         let mod = abty.value + ~~dataset.skill;
-	let rank = dataset.skill + 1;
+		let rank = Number(dataset.skill) + 1;
         let rolls = [new Roll("1d10+"+mod)];
         for (let i = 0; i < rank; i++) {
             rolls.push(new Roll("1d10+"+mod));

@@ -100,7 +100,7 @@ slaindustries.coolSkills = {
 
 slaindustries.ebb = {
     aware: "slaindustries.ebb.aware",
-    blast: "slaundustries.ebb.blast",
+    blast: "slaindustries.ebb.blast",
     comm: "slaindustries.ebb.comm",
     enh: "slaindustries.ebb.enh",
     heal: "slaindustries.ebb.heal",

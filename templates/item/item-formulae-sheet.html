@@ -21,36 +21,34 @@
     </div>
 
     {{!-- Attributes Tab --}}
-    <div class="tab attributes" data-group="primary" data-tab="attributes">
+  <div class="tab attributes" data-group="primary" data-tab="attributes">
       {{!-- As you add new fields, add them in here! --}}
-      <div class="resource">
-        <label class="resource-label">Formulae Rank</label>
-        <input type="text" name="system.rank" value="{{system.rank}}" data-dtype="Number"/>
+      <div class="grid-2col">
+          <div class="resource">
+              <label class="resource-label">Formulae Rank</label>
+              <input type="text" name="system.rank" value="{{system.rank}}" data-dtype="Number" />
+          </div>
+          <div class="resource">
+              <label class="resource-label">Formulae Rating</label>
+              <input type="text" name="system.fr" value="{{system.fr}}" data-dtype="Number" />
+          </div>
+          <div class="resource">
+              <div class="resource">
+                  <label class="resource-label">Discipline</label>
+                  <select name="system.discipline">
+                      {{#select system.discipline}}
+                        {{#each config.ebb as |name dis|}}
+                             <option value="{{dis}}">{{localize name}}</option>
+                        {{/each}}
+                      {{/select}}
+                  </select>
+              </div>
+          </div>
+          <div class="resource">
+              <label class="resource-label">Duration</label>
+              <input type="text" name="system.duration" value="{{system.duration}}" data-dtype="String" />
+          </div>
       </div>
-	  <div class="resource">
-        <label class="resource-label">Formulae Rating</label>
-        <input type="text" name="system.fr" value="{{system.fr}}" data-dtype="Number"/>
-      </div>
-	  <div class="resource">
-        <label class="resource-label">Formulae Discipline: <input list="discipline" name="system.discipline" value="{{system.discipline}}" /></label>
-        <datalist id="discipline">
-            <option value="Awareness">
-            <option value="Blast">
-            <option value="Communication">
-            <option value="Enhance">
-            <option value="Heal">
-            <option value="Protection">
-            <option value="Reality Fold">
-            <option value="Senses">
-            <option value="Telekenesis">
-            <option value="Thermal">
-        </datalist>
-      </div>
-    </div>
-	<div class="resource">
-        <label class="resource-label">Duration</label>
-        <input type="text" name="system.duration" value="{{system.duration}}" data-dtype="String"/>
-      </div>
-    </div>
+  </div>
   </section>
 </form>

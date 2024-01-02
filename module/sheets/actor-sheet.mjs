@@ -90,16 +90,16 @@ export class slaindustriesActorSheet extends ActorSheet {
     const traits = [];
     const drugs = [];
     const formulae = {
-      "Awareness": [],
-      "Blast": [],
-      "Communication": [],
-      "Enhance": [],
-      "Heal": [],
-      "Protection": [],
-      "Reality Fold": [],
-      "Senses": [],
-      "Telekenesis": [],
-      "Thermal": []
+        "aware": [],
+        "blast": [],
+        "comm": [],
+        "enh": [],
+        "heal": [],
+        "prot": [],
+        "fold": [],
+        "sense": [],
+        "tele": [],
+        "therm": []
     };
 
     // Iterate through items, allocating to containers
@@ -133,7 +133,7 @@ export class slaindustriesActorSheet extends ActorSheet {
       }
       // Append to formulae.
       else if (i.type === 'formulae') {
-        if (i.system.rank != undefined) {
+        if (i.system.discipline != undefined) {
           formulae[i.system.discipline].push(i);
         }
       }

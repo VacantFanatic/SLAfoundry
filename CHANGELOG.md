@@ -7,3 +7,6 @@
 	- Added drug items
 	- Made minor layout fixes
 	- Added better support for localization
+
+## 0.4.40
+	-Corrected the Drug panel items should now display.

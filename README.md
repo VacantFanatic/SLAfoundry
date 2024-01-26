@@ -1,43 +1,31 @@
-# slaindustries System
+# Slaindustries System
 
-![Foundry v10](https://img.shields.io/badge/foundry-v10-green)
+![Foundry v11](https://img.shields.io/badge/foundry-v11-green)
 
-This system is a slaindustries system that you can use as a starting point for building your own custom systems. It's similar to Simple World-building, but has examples of creating attributes in code rather than dynamically through the UI.
+Thanks for checking this out! This project is (slowly) implementing a Foundry system for SLA Industries 2ed by Nightfall games.
+https://nightfall.games/sla-industries/
 
-## Usage
+As this is a hobby project not affiliated with Nightfall games there are a few things to keep in mind:
+- There are no compendium items with this system.  This avoids copyright issues.  If you'd like Items, Armor, Formulae etc. please purchase the core books from Nightfall.
+- The item system supports entering the items from the core books and supplements.
+- I'm working on this solo and as time permits which unfortunaely due to having to pay bills progress is limited. (I'm aiming to do a release quareterly)
 
-Before installing this system, you should rename any files that have `slaindustries` in their filename to use whatever machine-safe name your system needs, such as `adnd2e` if you were building a system for 2nd edition Advanced Dungeons & Dragons. In addition, you should search through the files for `slaindustries` and `slaindustries` and do the same for those, replacing them with appropriate names for your system.
-
-### System Generator
-
-This project is also available as generator that can be run with npm: https://www.npmjs.com/package/generator-foundry
-
-### Vue 3 slaindustries
-
-Alternatively, there's another build of this system that supports using Vue 3 components (ES module build target) for character sheet templates.
-
-Head over to the [Vue3slaindustries System](https://gitlab.com/asacolips-projects/foundry-mods/vue3slaindustries) repo if you're interested in using Vue!
-
-### Tutorial
-
-For much more information on how to use this system as a starting point for making your own, see the [full tutorial on the Foundry Wiki](https://foundryvtt.wiki/en/development/guides/SD-tutorial)!
-
-## Sheet Layout
-
-This system includes a handful of helper CSS classes to help you lay out your sheets if you're not comfortable diving into CSS fully. Those are:
-
-* `flexcol`: Included by Foundry itself, this lays out the child elements of whatever element you place this on vertically.
-* `flexrow`: Included by Foundry itself, this lays out the child elements of whatever element you place this on horizontally.
-* `flex-center`: When used on something that's using flexrow or flexcol, this will center the items and text.
-* `flex-between`: When used on something that's using flexrow or flexcol, this will attempt to place space between the items. Similar to "justify" in word processors.
-* `flex-group-center`: Add a border, padding, and center all items.
-* `flex-group-left`: Add a border, padding, and left align all items.
-* `flex-group-right`: Add a border, padding, and right align all items.
-* `grid`: When combined with the `grid-Ncol` classes, this will lay out child elements in a grid.
-* `grid-Ncol`: Replace `N` with any number from 1-12, such as `grid-3col`. When combined with `grid`, this will layout child elements in a grid with a number of columns equal to the number specified.
-
-## Compiling the CSS
-
-This repo includes both CSS for the theme and SCSS source files. If you're new to CSS, it's probably easier to just work in those files directly and delete the SCSS directory. If you're interested in using a CSS preprocessor to add support for nesting, variables, and more, you can run `npm install` in this directory to install the dependencies for the scss compiler. After that, just run `npm run gulp` to compile the SCSS and start a process that watches for new changes.
-
-![image](http://mattsmith.in/images/slaindustries.png)
+This project is currently a BETA. What does that mean?
+- Until the System is "feature complete" the version will not be increased to v1.0
+- The data model may fluctuate and no migration scripts will be done until the system is more stable. 
+  - This means you may need to re-enter character data and item data from time to time.
+- What does feature complete mean??!
+    - All sheets are done Character and Threats
+    - Dice roll cards are implemented to "pretty up" the results, make the success vs. skill dice more clear and have damage buttons etc on the cards.
+    - I will NOT be implementing "Roll Rsolution" i.e. there will be no automatic calculation of roll vs. DV
+    - Ammunition counters and reload buttons for weapons
+    - Melee dice reservation for defense
+    - Movment provider for drag ruler built into the system
+    - Implementing a wound tracker
+    - Adding effects to items (deathsuit bonuses etc when equipped)
+    - Implementing "target logic" i.e. Apply damage directly to targeted token.
+- Post 1.0 
+  - Look and feel improvements (i.e. Non-disruptive changes)
+    - Improve the look of sheets and UI to closer match the books
+    - Overall CSS improvements
+    - Dice so Nice Soupport 
